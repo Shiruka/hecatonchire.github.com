@@ -369,3 +369,52 @@ footer a:hover {
 
 /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
 @media only screen and (max-width: 479px) {}
+
+#bar
+{
+background-image:url(../images/bar.png);
+background-repeat:no-repeat;
+height:53px;
+width:750px;
+padding-bottom:15px;
+text-align:center;
+margin:0 auto 0 auto;
+margin-bottom: 20px;
+}
+
+#bar ul {
+    margin: 0px auto 0px auto;
+    padding: 0px;
+    list-style-type: none;
+    height: 74px;
+    text-align:center;
+}
+#bar ul li , #bar ul li a, #bar ul li a:visited{
+    margin: 0px;
+    padding: 0px;
+    height: 30px;
+    overflow: hidden;
+    display: inline;
+    text-align:center;
+    line-height:65px;
+    color:#26476E;
+    padding-left:6px;
+    padding-right:6px;
+}
+
+#bar ul li a:hover
+{
+color:#000000;
+text-decoration:underline;
+
+}
+
+div.command {
+    padding: 5px; 
+    color: #000; 
+    background-color: #e2e2e2; 
+    border-top: 1px solid gray; 
+    border-bottom: 1px solid gray; 
+    margin-bottom:20px; 
+    font-family:monospace;
+}
