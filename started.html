@@ -70,7 +70,7 @@
             <p>To install the kernel, execute the following commands:</p>
 
             <div class='command'>
-            make moduels_install<br>
+            make modules_install<br>
             make headers_install<br>
             make install
             </div>
@@ -84,6 +84,8 @@
             </div>
             <p>For soft iWARP, load the siw module</p>
             <div class='command'>modprobe siw</div>
+
+		  <p>Note: if you have NIC or HBA that support RDMA (Infiniband, Iwarp, RoCE, etc..)  you need to configure them so they cna be used with rdmacm and libibverbs</p>
 
             <p>Lastly, setup the new heca dsm_rdma module</p>
             <div class='command'>modprobe dsm_rdma ip=IP port=PORT</div>
