@@ -372,10 +372,10 @@ footer a:hover {
 
 #bar
 {
-background-image:url(../images/bar.png);
+background-color: #D7D7D7;
 background-repeat:no-repeat;
 height:53px;
-width:750px;
+width:620px;
 padding-bottom:15px;
 text-align:center;
 margin:0 auto 0 auto;
