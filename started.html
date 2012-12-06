@@ -34,8 +34,10 @@
         <section id="main_content">
 
             <h3>1. Before you begin.</h3>
+            <p>The instructions below have been tested on ubuntu server and using root user. 
+            If you do not use root user, you will need to use sudo to run most commands.</p>
 
-            <p>Before you begin, you will need to setup a kernel dev environment.<p>
+            <p>Before you begin, you will need to setup a kernel dev environment:<p>
 
             <div class='command'>
             apt-get install fakeroot build-essential crash kexec-tools</br>
@@ -43,11 +45,25 @@
             apt-get install git-core libncurses5 libncurses5-dev libelf-dev binutils-dev
             </div>
 
-            <p>You will need to install an RDMA environment<p>
+            <p>You will also need to setup an RDMA environment:<p>
 
             <div class='command'>
             apt-get install libibverbs1 libibcm1 libibcm-dev<br>
             apt-get install libibverbs-dev  libibcommon1 ibverbs-utils
+            </div>
+
+            <p>Check if /etc/udev/rules.d/40-ib.rules exists, if not create it and populate it with:</p>
+
+            <div class='command'>
+            ####  /etc/udev/rules.d/40-ib.rules  ####<br>
+            KERNEL=="umad*", NAME="infiniband/%k"<br>
+            KERNEL=="issm*", NAME="infiniband/%k"<br>
+            KERNEL=="ucm*", NAME="infiniband/%k", MODE="0666"<br>
+            KERNEL=="uverbs*", NAME="infiniband/%k", MODE="0666"<br>
+            KERNEL=="uat", NAME="infiniband/%k", MODE="0666"<br>
+            KERNEL=="ucma", NAME="infiniband/%k", MODE="0666"<br>
+            KERNEL=="rdma_cm", NAME="infiniband/%k", MODE="0666"<br>
+            ########
             </div>
 
 
@@ -59,12 +75,22 @@
             
             <div class='command'>git clone http://github.com/hecatonchire/linux-heca.git</div>
 
-            <p>Inside the linux-heca directory, to build the kernel, first run make menuconfig. Set up any extra modules as required. Then build using make.</p>
+            <p> An optional (but recommended) step is to download the .config file from the following URL into the linux-heca folder to make the kernel installation procedure a bit easier.</p> 
 
             <div class='command'>
-                make menuconfig</br>
+                wget https://raw.github.com/hecatonchire/heca-misc/master/kernel/.config
+            </div>
+
+            <p>Inside the linux-heca directory, to build the kernel, first run make menuconfig. Select any additional kernel modules to install as required.</p>
+             <div class='command'>
+                make menuconfig
+            </div>
+
+            <p>Then build the kernel using make. <br> NOTE: We recommend that you have at least 20GB of disk space to build the kernel.</p>
+            <div class='command'>
                 make
             </div>
+
 
             <p>To install the kernel, execute the following commands:</p>
 
@@ -75,40 +101,51 @@
             </div>
 
             <p>Next, reboot the machine and boot into the new kernel.</p>
-            <p>You will now need to setup the rdma modules. Here we assume that infiniband has been installed. Run the following commands:</p>
+            <p>You will now need to setup the rdma modules. Run the following commands (or add 
+             them to /etc/rc.local):</p>
             <div class='command'>
                 modprobe rdma_cm<br>
                 modprobe ib_uverbs<br>
                 modprobe rdma_ucm
             </div>
-            <p>For soft iWARP, load the siw module</p>
+            <p>To use with soft iWARP (requires no special RDMA configuration), load the siw module</p>
             <div class='command'>modprobe siw</div>
 
-		  <p>Note: if you have NIC or HBA that support RDMA (Infiniband, Iwarp, RoCE, etc..)  you need to configure them so they can be used with rdmacm and libibverbs</p>
+		  <p>NOTE: if you have NICs/HBAs that support RDMA (Infiniband, Iwarp, RoCE, etc..) you will need to configure them so they can be used with rdmacm and libibverbs</p>
 
             <p>Lastly, setup the new heca dsm_rdma module</p>
             <div class='command'>modprobe dsm_rdma ip=IP port=PORT</div>
 
-            <p>You can check that everything has been loaded correctly by running dmesg</p>
+            <p>You can check that everything has been loaded correctly by running dmesg and checking for any errors.</p>
 
             <h3>3. Installing libheca and creating your first heca application</h3>
 
-            <p>To start using the heca kernel, a good place to start is to install libheca and run a simple test application.</p>
+            <p>To start using the heca kernel, a good place to start is to install libheca and run a simple sanity test application.</p>
             <p>
-                The libheca module is available from the <a href="https://github.com/hecatonchire/heca">heca repository</a> from github.
+                The libheca module is available from the <a href="https://github.com/hecatonchire/libheca">libheca repository</a> from github.
                 This can be done by cloning the source with git using this command:
             </p>
-            <div class='command'>git clone http://github.com/hecatonchire/heca.git</div>
+            <div class='command'>git clone http://github.com/hecatonchire/libheca.git</div>
 
             <p>Navigate to the libheca folder and build and install by running:<p>
 
             <div class='command'>
-                make<br>
                 make libheca
             </div>
 
-            <p>You will notice two additional binaries get created in this folder: master and client.</p>
-            
+            <p>To run a simple sanity test, navigate to the test directory under libheca. In the conf folder, create a configuration file with the ip address and rdma port of one or more nodes using the templates provided. To run the test, on the server node, run: </p> 
+            <div class='command'>
+                ./tst &lt;conf_file&gt;
+            </div>
+            <p>On the client node, run:</p>
+            <div class='command'>
+                ./tst &lt;conf_file&gt; &lt;node_id&gt;
+            </div>
+            <p>where with just a single client node, the node_id will be 2.</p>
+
+            <p>The master node needs to be initialized first, then the client. After that, the onscreen 
+            numbering should be followed to demonstrate the heca system in action. 
+
  
         </section>
 
