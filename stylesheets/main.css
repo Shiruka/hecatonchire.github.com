@@ -41,6 +41,7 @@ html, body {
     height:100%;
     margin: 0 auto;
     width: 900px;
+	padding-top:20px;
 }
 
 h1 {
@@ -82,9 +83,16 @@ code, li, p, pre {
 }
  
 #mainmenu ul li a:visited{
-    color: white;}
- 
-#mainmenu ul li a:hover, #mainmenu ul li .current{
+    color: white;
+}
+
+#mainmenu ul li a.current{
+    color: #fff;
+    background-color:darkred;
+}
+	
+#mainmenu ul li a:hover{
     color: #fff;
     background-color:#0b75b2;
 }
+
