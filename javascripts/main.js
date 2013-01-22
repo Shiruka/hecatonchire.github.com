@@ -1,1 +1,9 @@
-console.log('This would be the main JS file.');
+$(function(){
+        $("#slides").slides({
+            preload: true,
+            preloadImage: 'images/photo-1.jpg',
+            play:5000,
+            pause:5000,
+            hoverPause: true,
+            });
+    });

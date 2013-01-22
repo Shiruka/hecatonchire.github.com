@@ -42,6 +42,7 @@ html, body {
     margin: 0 auto;
     width: 900px;
 	padding-top:20px;
+    padding-bottom: 150px;
 }
 
 h1 {
@@ -88,7 +89,7 @@ code, li, p, pre {
 
 #mainmenu ul li a.current{
     color: #fff;
-    background-color:darkred;
+    background-color: #4B2C35;
 }
 	
 #mainmenu ul li a:hover{
@@ -96,3 +97,12 @@ code, li, p, pre {
     background-color:#0b75b2;
 }
 
+div.command {
+    padding: 5px; 
+    color: #000; 
+    background-color: #e2e2e2; 
+    border-top: 1px solid gray; 
+    border-bottom: 1px solid gray; 
+    margin-bottom:20px; 
+    font-family:monospace;
+}
