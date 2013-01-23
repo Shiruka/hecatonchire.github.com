@@ -1,72 +1,76 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <title>Hecatonchire Project by hecatonchire</title>
-  </head>
-
-  <body>
+<html lang='en'>
+<head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <link rel="stylesheet" type="text/css" href="stylesheets/reset.css" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/main.css" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/slides.css" />
+    <title>The Hecatonchire Project</title>
+    <script type="text/javascript" src="javascripts/jquery-latest.min.js"></script>
+    <script type="text/javascript" src="javascripts/slides.jquery.js"></script>
+    <script type="text/javascript" src="javascripts/google.js"></script>
+    <script type="text/javascript" src="javascripts/main.js"></script>
+</head>
+<body>
     <div id="container">
-      <div class="inner">
+        <div id="header">
+            <div id="banner">
+                <img src="images/logo2.png" style="width:80px; float:left;"/>
+                <div> <h1>The Hecatonchire Project</h1>
+                      <h2>- scaling many to one</h2> </div>
+            </div>
+        </div>
+        <div id="menubar">
+            <div id="mainmenu">
+               <ul>
+                  <li><a class="current" href="index.html">Home</a></li>
+                  <li><a href="started.html">Getting Started</a></li>
+                  <li><a href="http://github.com/hecatonchire">Github</a></li>
+                  <li><a href="research.html">Research</a></li>
+                  <li><a href="about.html">About us</a></li>
+                  <li><a href="faq.html">FAQ</a></li>
+               </ul>
+               <br style="clear:left"/>
+            </div>
+        </div>
+        <div id="mainframe">
+        <div id="maincontent">
+        <img src="images/aggregate_server.png" style="float:right; width: 370px; margin: 45px 0 0 20px;">
+        <h1>The Vision</h1>
+        <p style=''>
+        Cloud storage has become pretty popular recently allowing storage to become 
+        a service product and therefore virtually limitless. Imagine being able to aggregate memory, 
+        cpu and I/O in exactly the same way. Imagine servers being able to request additional memory 
+        or computing power from other networked nodes on demand. This is what the hecatonchire 
+        project aims to deliver.
+        </p>
 
-        <header>
-          <h1>Hecatonchire Project</h1>
-          <h2>Lego Cloud </h2>
-        </header>
+        <h1>Applications</h1>
+        <div id="frame"> 
+            <div id="slides">
+                <div class="slides_container"> 
+                    <div>
+                        <img src="images/livemigration.png">
+                    </div>
+                    <div>
+                        <img src="images/memorycloud.png" style="width:850px; height:270px">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br style="clear:both">
 
-
-        <section id="main_content">
-        <div id="bar">
-            <ul>
-                <li><a href="index.html">Home</a></li> |
-                <li><a href="started.html">Getting started</a></li> |
-                <li><a href="http://github.com/hecatonchire">Source</a></li> 
-            </ul>
+        <h1>How it works</h1>
+        <img src="images/dsm.png" style="float:right; width: 370px; margin: 0 0 0 20px;">
+        <p>We have developed a linux kernel module that associates memory on a remote computer to the local system via remote distributed memory access (RDMA). The kernel swaps first to remote memory before swapping to disk thereby treating the remote memory as an extension of local memory. The results are impressive with a single digit percentage overhead swapping to remote memory versus local. Visit our <a href="started.html">getting started</a> page to download the kernel module and API to set up your own distributed memory system (DSM).<p>
+        <br style="clear:both">
+        <h1>What's cooking?</h1>
+        <p>To date, the focus has been on memory pooling and we have <a href="research.html">proven results</a> showcasing the advantages of DSM. Coming soon, we expect to extend the technology to support aggregated computing power and I/O onto a single node. <p>
         </div>
 
 
-          <h3>Project Objectives</h3>
-
-<p>The Hecatonchire project aims to bring together the flexibility of virtualization, cloud and high performance computing in order to break free of current cloud limitation. This project extends pre-existing virtualization technology and allows dynamic, on-the-fly aggregation of virtual machines into larger SMP virtual systems. On-demand provisioning and re-provisioning of SMP systems alongside normal cloud VMs without the requirement of dedicated physical hardware or separate infrastructure. The SMP virtual system also benefit from all virtualization and cloud features as we can add and remove on the fly as well as move allocated VM though the mean of live migration. Finally this project deliver a framework that breaks free of current limitation imposed by current virtualization and physical server by enabling true flexibility in term of performance and resource management life cycle. As a result it will enable true cloud paradigm through the datacenter resource disaggregation.</p>
-
-        </section>
-
-<!--BH-->
-<script type="text/javascript">
-    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-    try {
-        var pageTracker = _gat._getTracker("UA-36131145-1");
-        pageTracker._trackPageview();
-    } catch(err) {}
-</script>
-
-<!--HP-->
-<script type="text/javascript">
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-36859287-1']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
-
-
-
-      </div>
+        </div>
     </div>
-  </body>
+</body>
 </html>
