@@ -61,15 +61,22 @@ ul li {
     padding: 30px 20px;
 }
 
+h1, h2, h3, h4 {
+    font-weight: 300;
+    line-height: 1.3;
+}
+
 h1 {
     font-size: 2.813em;
     margin-bottom: .267em;
 }
 
-h1, h2, h3, h4 {
-    font-weight: 300;
-    line-height: 1.3;
+
+h2 {
+    font-size: 1.8em;
+    margin-bottom: .267em;
 }
+
 
 code, li, p, pre {
     font-size: 1.219em;

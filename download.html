@@ -1,81 +1,72 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <title>Hecatonchire Project by hecatonchire</title>
-  </head>
-
-  <body>
+<html lang='en'>
+<head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <link rel="stylesheet" type="text/css" href="stylesheets/reset.css" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/main.css" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/button.css" />
+    <title>The Hecatonchire Project</title>
+    <script type="text/javascript" src="javascripts/google.js"></script>
+</head>
+<body>
     <div id="container">
-      <div class="inner">
-
-        <header>
-          <h1>Hecatonchire Project</h1>
-          <h2>Lego Cloud </h2>
-        </header>
-
-        <section id="menu">
-        <div id="bar">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="started.html">Getting started</a></li>
-                <li><a href="download.html">Download</a></li>
-                <li><a href="about.html">About us</a></li>
-            </ul>
+        <div id="header">
+            <div id="banner">
+                <img src="images/logo2.png" style="width:80px; float:left;"/>
+                <div> <h1>The Hecatonchire Project</h1>
+                      <h2>- scaling many to one</h2> </div>
+            </div>
         </div>
+        <div id="menubar">
+            <div id="mainmenu">
+               <ul>
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="started.html">Getting Started</a></li>
+                  <li><a href="docs.html">Docs</a></li>
+                  <li><a class="current" href="download.html">Downloads</a></li>
+                  <li><a href="research.html">Research</a></li>
+                  <li><a href="about.html">About us</a></li>
+                  <li><a href="faq.html">FAQ</a></li>
+               </ul>
+               <br style="clear:left"/>
+            </div>
+        </div>
+        <div id="mainframe">
+            <div id="maincontent">
 
-        </section>
-    
+            <h1>Downloads</h1>
+            
+            <p>All of the code you will need to run the heca platform is available on github. We advise reading the <a href="started">getting started guide</a> before starting.</p>
+            <a href="https://github.com/hecatonchire/" id="view-on-github" class="button"><span>View code here</span></a>
+            <br style="clear:both">
+            <p style="margin-top:20px;"></p>
 
-        <h3>Hecatonchire project</h3>
-        <p>All project repositories are available here</p>
-        <section id="downloads" class="clearfix">
-          <a href="https://github.com/hecatonchire" id="view-on-github" class="button"><span>View on GitHub</span></a>
-        </section>
-        <hr>
-        <h3>Heca Kernel</h3>
-        <p>To use heca, you will need to install the heca kernel from here</p>
-        <section id="downloads" class="clearfix">
-          <a href="https://github.com/hecatonchire/linux-heca" id="view-on-github" class="button"><span>View on GitHub</span></a>
-        </section>
-        <hr>
+            <p>
+                To install the <b>heca kernel</b>, you will need to first download the <a href="https://github.com/hecatonchire/linux-heca">linux-heca repository</a> from github.
+                This can be done by cloning the source with git using this command:
+            </p>
+            <div class='command'>git clone http://github.com/hecatonchire/linux-heca.git</div>
 
+            <p>
+                The <b>libheca</b> module is available from the <a href="https://github.com/hecatonchire/libheca">libheca repository</a> from github.
+                This can be done by cloning the source with git using this command:
+            </p>
+            <div class='command'>git clone http://github.com/hecatonchire/libheca.git</div>
 
-<!--BH-->
-<script type="text/javascript">
-    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-    try {
-        var pageTracker = _gat._getTracker("UA-36131145-1");
-        pageTracker._trackPageview();
-    } catch(err) {}
-</script>
-
-<!--HP-->
-<script type="text/javascript">
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-36859287-1']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
+            <p>
+                The <b>qemu-heca</b> code for doing live migration is available from the <a href="https://github.com/hecatonchire/qemu-heca">qemu-heca repository</a> from github.
+                This can be done by cloning the source with git using this command:
+            </p>
+            <div class='command'>git clone http://github.com/hecatonchire/qemu-heca.git</div>
 
 
-      </div>
+
+
+
+
+            </div>
+        </div>
     </div>
-  </body>
+</body>
 </html>
