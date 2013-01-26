@@ -35,12 +35,24 @@
             <div id="maincontent">
 
             <h1>Frequently Asked Questions</h1>
-            <p><b>What license is the hecatonchire project under?</b></p>
-            <p>Apache License</p>
+			<p><b>What can I do with Hecatonchire project</b></p>
+            <p>You can extend the available memory accessible by applications by tapping into the memory of physical servers on the network</p>
+			<p>You can extend the memory footprint of Virtual machine by create leveraging remote memory pool, creating a memory cloud</p>
+			<p>You can use Hecatonchire technology to instantaneously live migrate virtual machine from one physical host to another regardless of the amount of memory the VM use( post-copy method)</p> 
+            <br>
+            <p><b>What license is the Hecatonchire project under?</b></p>
+            <p>Kernel and Qemu-KVM: GPL License</p>
+			<p>LibeHeca:<a href="http://www.apache.org/licenses/LICENSE-2.0.html">Apache License</a></p>
             <br>
             <p><b>What languages do you support?</b></p>
             <p>The libheca API is written in C so supports C/C++</p>
             <br>
+			<p><b>Do I need special Hardware?</b></p>
+            <p>No you do not need any special hardware , Hecatonchire Is design to be run using of the shelves HW.</p>
+			<p>You do not need any special NIC to use the RDMA functionality as you can use <a href="http://www.gitorious.org/softiwarp">Softiwarp</a> as we included it by default in our modified kernel or you can use <a href="http://www.systemfabricworks.com/downloads/roce">SoftRoce</a>.</p>
+			<p>For more details on how to use softiwarp see <a href="http://voidreflections.blogspot.de/2011/03/how-to-install-soft-iwarp-on-ubuntu.html">Installing SoftIwarp</a> or SoftRoCE <a href="http://voidreflections.blogspot.de/2011/08/soft-roce-alternative-to-soft-iwarp.html">Installing SoftRoCE</a>.</p> 
+			<p>However if you want to benefit from HW acceleration from RDMA enable NIC we support all type of fabric as long as they are OFED compatible ( We tested against IB with Mellanox X2 and IWARP Chelsio T4 NIC).</p>
+</p>        <br>
             <p><b>Is it possible to use libheca without installing the heca kernel?</b></p>
             <p>No, you will need to install the heca kernel.</p>
             <br>
