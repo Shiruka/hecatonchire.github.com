@@ -53,6 +53,34 @@
     apt-get install libncurses5 libncurses5-dev
 </div>
 
+<p>Setup initrd.img related tools:<p>
+
+<div class='command'>
+     apt-get install multipath-tools kpartx arping dracut
+ </div>
+
+<p>We export Build hosts' root directory via NFS, to be later used by Target
+hosts</p>
+
+<p>First install NFS server package:<p>
+
+<div class='command'>
+    apt-get install nfs-kernel-server<br>
+    chkconfig nfsserver on
+</div>
+
+<p>Export / directory by adding the below to /etc/exports:<p>
+
+<div class='command'>
+/ *(rw)  
+</div>
+
+<p>Refresh the NFS server</p>
+
+<div class='command'>
+    service nfs-kernel-server restart
+</div>
+
 <h2>Building the kernel</h2>
 
 <p>
@@ -83,7 +111,7 @@ menuconfig. Select any additional kernel modules to install as required.</p>
     df -h .
 </div>
 
-<p> Invoke a parallel kernel build using all cores</p>
+<p>Invoke a parallel kernel build using all cores</p>
 
 <div class='command'>
     make -j`nproc`<br>
@@ -130,14 +158,37 @@ KERNEL=="ucma", NAME="infiniband/%k", MODE="0666"<br>
 KERNEL=="rdma_cm", NAME="infiniband/%k", MODE="0666"<br>
 </div>
 
+<p>Setup NFS access to the Build hosts' root directory</p>
+
+<div class='command'>
+    mkdir -p /mount/builder<br>
+    mount -t nfs builder:/ /mount/builder<br>
+    cd /mount/builder<br>
+</div>
+
 <h2>Installing the kernel</h2>
 
-<p>To install the kernel, execute the following commands:</p>
+<p>To install the kernel, execute the following commands (in the kernel build
+directory):</p>
 
 <div class='command'>
     make install<br>
     make modules_install<br>
     make headers_install
+</div>
+
+<p>Create new init-RAM-disk:</p>
+
+<div class='command'>
+    rm -f /boot/initrd.img-`make kernelrelease`<br>
+    dracut -l -f /boot/initrd.img-`make kernelrelease`<br>
+    lsinitramfs /boot/initrd.img-`make kernelrelease`
+</div>
+
+<p>Refresh GRUB bootloader entries:</p>
+
+<div class='command'>
+    update-grub2
 </div>
 
 <p>Next, reboot the machine and boot into the new kernel.</p>
@@ -194,6 +245,7 @@ make libheca
 
 <p>To run a simple sanity test, navigate to the test directory under libheca.
 In the conf folder, create a configuration file with the ip address and rdma
+service nfs-kernel-server restart
 port of one or more nodes using the templates provided. To run the test, on the
 server node, run: </p> 
 
