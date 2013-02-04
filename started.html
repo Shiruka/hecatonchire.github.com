@@ -118,6 +118,27 @@ menuconfig. Select any additional kernel modules to install as required.</p>
     make -j`nproc` modules
 </div>
 
+<h2>Bulding libheca</h2>
+
+<p>While it is possible to interact with Hecatonchire Kernel directly via the
+exposed ioctl interface, we also provide a wrapper named libheca, exposing an
+simpler user-mode API.</p>
+
+<p>
+The libheca is available from the <a href="https://github.com/hecatonchire/libheca">libheca repository</a> from github.
+This can be done by cloning the source with git using this command:
+</p>
+
+<div class='command'>
+    git clone http://github.com/hecatonchire/libheca.git
+</div>
+
+<p>Navigate to the libheca folder and build and install by running:<p>
+
+<div class='command'>
+    make
+</div>
+
 <h1>Execution on the Target Host</h1>
 
 <p>This sequence was tested on Ubuntu 10.10, using root permissions</p>
@@ -180,9 +201,10 @@ directory):</p>
 <p>Create new init-RAM-disk:</p>
 
 <div class='command'>
+    make kernelrelease<br>
     rm -f /boot/initrd.img-`make kernelrelease`<br>
-    dracut -l -f /boot/initrd.img-`make kernelrelease`<br>
-    lsinitramfs /boot/initrd.img-`make kernelrelease`
+    dracut -l -f /boot/initrd.img-`make kernelrelease` `make kernelrelease`<br>
+    lsinitramfs /boot/initrd.img-`make kernelrelease` | grep modules.dep
 </div>
 
 <p>Refresh GRUB bootloader entries:</p>
@@ -191,7 +213,12 @@ directory):</p>
     update-grub2
 </div>
 
-<p>Next, reboot the machine and boot into the new kernel.</p>
+<p>Next, reboot the machine and boot into the new kernel. And verify the new
+kernel has loaded</p>
+
+<div class='command'>
+    uname -r
+</div>
 
 <p>You will now need to setup the rdma modules. Run the following commands (or
 add them to /etc/rc.local):</p>
@@ -214,7 +241,19 @@ siw module</p>
 <p>Lastly, setup the new heca dsm_rdma module</p>
 
 <div class='command'>
-    modprobe dsm_rdma ip=IP port=PORT
+    modprobe dsm_rdma ip=IP port=PORT<br>
+</div>
+
+For a SoftIWARP device you could use the IP associated with the 'eth0' device:
+
+<div class='command'>
+    modprobe dsm_rdma ip=`/sbin/ifconfig eth0 | grep 'inet addr:' | cut -d: -f2 | awk '{print $1}'` port=4444
+</div>
+
+For InfiniBand you could use the IP associated with the 'ib0' device:
+
+<div class='command'>
+    modprobe dsm_rdma ip=`/sbin/ifconfig ib0 | grep 'inet addr:' | cut -d: -f2 | awk '{print $1}'` port=4444
 </div>
 
 <p>You can check that everything has been loaded correctly by running dmesg and
@@ -222,32 +261,26 @@ checking for any errors.</p>
 
 <h2>Installing libheca</h2>
 
-<p>While it is possible to interact with Hecatonchire Kernel directly via the
-exposed ioctl interface, we also provide a wrapper named libheca, exposing an
-simpler user-mode API.</p>
-
-<p>
-The libheca is available from the <a href="https://github.com/hecatonchire/libheca">libheca repository</a> from github.
-This can be done by cloning the source with git using this command:
-</p>
-
-<div class='command'>
-    git clone http://github.com/hecatonchire/libheca.git
-</div>
-
 <p>Navigate to the libheca folder and build and install by running:<p>
 
 <div class='command'>
-make libheca
+    make install
 </div>
 
 <h2>libheca sanity test</h2>
 
-<p>To run a simple sanity test, navigate to the test directory under libheca.
-In the conf folder, create a configuration file with the ip address and rdma
-service nfs-kernel-server restart
-port of one or more nodes using the templates provided. To run the test, on the
-server node, run: </p> 
+<p>To run a simple sanity test, navigate to the tests directory under
+libheca.</p>
+
+<p>Create a &lt;conf_file&gt; using the following example:</p>
+
+<div class='command'>
+    size=512<br>
+    1=&lt;Server Node IP Address&gt;:4444<br>
+    2=&lt;Client Node IP Address&gt;:4444
+</div>
+
+To run the test, on the server node, run: </p> 
 
 <div class='command'>
     ./tst &lt;conf_file&gt;
@@ -259,9 +292,9 @@ server node, run: </p>
     ./tst &lt;conf_file&gt; &lt;node_id&gt;
 </div>
 
-<p>where with just a single client node, the node_id will be 2.</p>
+<p>Where with just a single client node, the &lt;node_id&gt; will be 2.</p>
 
-<p>The master node needs to be initialized first, then the client. After that,
+<p>The server node needs to be initialized first, then the client. After that,
 the onscreen numbering should be followed to demonstrate the heca system in
 action.</p>
 
