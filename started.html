@@ -114,8 +114,8 @@ menuconfig. Select any additional kernel modules to install as required.</p>
 <p>Invoke a parallel kernel build using all cores</p>
 
 <div class='command'>
-    make -j`nproc`<br>
-    make -j`nproc` modules
+    make -j`nproc` all<br>
+    make -j`nproc` headers_check<br>
 </div>
 
 <h2>Bulding libheca</h2>
@@ -132,6 +132,13 @@ This can be done by cloning the source with git using this command:
 <div class='command'>
     git clone http://github.com/hecatonchire/libheca.git
 </div>
+
+<p>Setup environment so that it points to location of linux-heca</p>
+
+<div class='command'>
+    export LINUX_INCLUDE_PATH=$PWD/linux-heca/include
+</div>
+
 
 <p>Navigate to the libheca folder and build and install by running:<p>
 
