@@ -249,7 +249,13 @@ siw module</p>
 <p>Lastly, setup the new heca dsm_rdma module</p>
 
 <div class='command'>
-    modprobe dsm_rdma ip=IP port=PORT<br>
+    modprobe dsm_rdma<br>
+</div>
+
+Or with with many debug messages:
+
+<div class='command'>
+    modprobe dsm_rdma debug=10<br>
 </div>
 
 For a SoftIWARP device you could use the IP associated with the 'eth0' device:
