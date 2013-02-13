@@ -246,28 +246,10 @@ siw module</p>
 
 <p>NOTE: if you have NICs/HBAs that support RDMA (Infiniband, Iwarp, RoCE, etc..) you will need to configure them so they can be used with rdmacm and libibverbs</p>
 
-<p>Lastly, setup the new heca dsm_rdma module</p>
+<p>Lastly, setup the new heca.ko LKM (Linux Kernel Module)</p>
 
 <div class='command'>
-    modprobe dsm_rdma<br>
-</div>
-
-Or with with many debug messages:
-
-<div class='command'>
-    modprobe dsm_rdma debug=10<br>
-</div>
-
-For a SoftIWARP device you could use the IP associated with the 'eth0' device:
-
-<div class='command'>
-    modprobe dsm_rdma ip=`/sbin/ifconfig eth0 | grep 'inet addr:' | cut -d: -f2 | awk '{print $1}'` port=4444
-</div>
-
-For InfiniBand you could use the IP associated with the 'ib0' device:
-
-<div class='command'>
-    modprobe dsm_rdma ip=`/sbin/ifconfig ib0 | grep 'inet addr:' | cut -d: -f2 | awk '{print $1}'` port=4444
+    modprobe heca<br>
 </div>
 
 <p>You can check that everything has been loaded correctly by running dmesg and
@@ -292,6 +274,18 @@ libheca.</p>
     size=512<br>
     1=&lt;Server Node IP Address&gt;:4444<br>
     2=&lt;Client Node IP Address&gt;:4444
+</div>
+
+For a SoftIWARP device you could use the IP associated with the 'eth0' device:
+
+<div class='command'>
+    /sbin/ifconfig eth0 | grep 'inet addr:' | cut -d: -f2 | awk '{print $1}'
+</div>
+
+For InfiniBand you could use the IP associated with the 'ib0' device:
+
+<div class='command'>
+    /sbin/ifconfig ib0 | grep 'inet addr:' | cut -d: -f2 | awk '{print $1}'
 </div>
 
 To run the test, on the server node, run: </p> 
