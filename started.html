@@ -119,7 +119,7 @@ menuconfig. Select any additional kernel modules to install as required.</p>
     make -j`nproc` headers_check<br>
 </div>
 
-<h2>Bulding libheca</h2>
+<h2>Building libheca</h2>
 
 <p>While it is possible to interact with Hecatonchire Kernel directly via the
 exposed ioctl interface, we also provide a wrapper named libheca, exposing an
@@ -145,6 +145,37 @@ This can be done by cloning the source with git using this command:
 
 <div class='command'>
     make
+</div>
+
+<h2>Building QEMU</h2>
+
+<p>We provide a modified QEMU which supports Hecatonchire commands at the hypervisor level, basically, it 
+    implements the commands using libheca. Thus, Hecatonchire's live-migration and remote-memory is already 
+    built-in.
+</p>
+
+<p>
+First of all, install pre-requisites:
+</p>
+
+<div class='command'>
+    apt-get install zlib1g-dev pkg-config libglib2.0-dev 
+</div>
+
+<p>
+Hecatonchire QEMU is available from the <a href="https://github.com/hecatonchire/qemu-heca">qemu-heca repository</a> from github.
+This can be done by cloning the source with git using this command:
+</p>
+
+<div class='command'>
+    git clone http://github.com/hecatonchire/qemu-heca.git
+</div>
+
+<p>Navigate to the qemu-heca folder and build it by running:</p>
+
+<div class='command'>
+    ./configure <br>
+    make <br>
 </div>
 
 <h1>Execution on the Target Host</h1>
@@ -305,6 +336,14 @@ To run the test, on the server node, run: </p>
 <p>The server node needs to be initialized first, then the client. After that,
 the onscreen numbering should be followed to demonstrate the heca system in
 action.</p>
+
+<h2>Installing QEMU</h2>
+
+<p>Navigate to the qemu-heca folder and install by running:<p>
+
+<div class='command'>
+    make install
+</div>
 
             </div>
         </div>
