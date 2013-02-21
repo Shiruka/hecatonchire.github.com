@@ -74,7 +74,10 @@
                 This can be done by cloning the source with git using this command:
             </p>
             
-            <div class='command'>git clone http://github.com/hecatonchire/linux-heca.git</div>
+	    <div class='command'>
+	    git clone http://github.com/hecatonchire/linux-heca.git
+	    cd linux-heca
+	    </div>
 
             <p> An optional (but recommended) step is to download the .config file from the following URL into the linux-heca folder to make the kernel installation procedure a bit easier.</p> 
 
@@ -82,23 +85,23 @@
                 wget https://raw.github.com/hecatonchire/heca-misc/master/kernel/.config
             </div>
 
-            <p>Inside the linux-heca directory, to build the kernel, first run make menuconfig. Select any additional kernel modules to install as required.</p>
+            <p>Following you can run any of the kernel configuration commands (oldconfig, menuconfig, etc.)</p>
              <div class='command'>
-                make menuconfig
+                make oldconfig
             </div>
 
-            <p>Then build the kernel using make. <br> NOTE: We recommend that you have at least 20GB of disk space to build the kernel.</p>
+            <p>Then build the kernel using all available cores. <br> NOTE: We recommend that you have at least 20GB of disk space to build the kernel.</p>
             <div class='command'>
-                make
+                make -j `nproc`
+                make -j `nproc` modules
             </div>
-
 
             <p>To install the kernel, execute the following commands:</p>
 
             <div class='command'>
+            make install
             make modules_install<br>
             make headers_install<br>
-            make install
             </div>
 
             <p>Next, reboot the machine and boot into the new kernel.</p>
