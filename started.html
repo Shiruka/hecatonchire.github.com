@@ -176,12 +176,12 @@ This can be done by cloning the source with git using this command:
 <p>Configure build environment using:</p>
 
 <div class='command'>
-    export LINUX_INCLUDE_PATH=$PWD/../linux-heca/include/
-    export LIBHECA_INCLUDE_PATH=$PWD/../libheca/src
-    ./configure \
-      --extra-cflags="-I${LINUX_INCLUDE_PATH} -I${LIBHECA_INCLUDE_PATH}" \
-      --extra-ldflags="-L${LINUX_INCLUDE_PATH} -L${LIBHECA_INCLUDE_PATH}" \
-      --enable-heca
+    export LINUX_INCLUDE_PATH=$PWD/../linux-heca/include/<br>
+    export LIBHECA_INCLUDE_PATH=$PWD/../libheca/src<br>
+    ./configure \<br>
+    --extra-cflags="-I${LINUX_INCLUDE_PATH} -I${LIBHECA_INCLUDE_PATH}" \<br>
+    --extra-ldflags="-L${LINUX_INCLUDE_PATH} -L${LIBHECA_INCLUDE_PATH}" \<br>
+    --enable-heca
 </div>
 
 <p>Compile using:</p>
