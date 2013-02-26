@@ -171,11 +171,23 @@ This can be done by cloning the source with git using this command:
     git clone http://github.com/hecatonchire/qemu-heca.git
 </div>
 
-<p>Navigate to the qemu-heca folder and build it by running:</p>
+<p>Navigate to the qemu-heca folder</p>
+
+<p>Configure build environment using:</p>
 
 <div class='command'>
-    ./configure <br>
-    make <br>
+    export LINUX_INCLUDE_PATH=$PWD/../linux-heca/include/
+    export LIBHECA_INCLUDE_PATH=$PWD/../libheca/src
+    ./configure \
+      --extra-cflags="-I${LINUX_INCLUDE_PATH} -I${LIBHECA_INCLUDE_PATH}" \
+      --extra-ldflags="-L${LINUX_INCLUDE_PATH} -L${LIBHECA_INCLUDE_PATH}" \
+      --enable-heca
+</div>
+
+<p>Compile using:</p>
+
+<div class='command'>
+    make -j `nproc`<br>
 </div>
 
 <h1>Execution on the Target Host</h1>
