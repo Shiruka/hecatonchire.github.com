@@ -35,11 +35,12 @@
         <div id="mainframe">
             <div id="maincontent">
 
-<h1>Building on the Build Host</h1>
+<h1>Getting started with linux-heca and libheca</h1>
+<p>The following guide will show you how to build and install the heca kernel and userspace library for working with it. Since typically, you will want to build the kernel on a separate machine from the installation machine, this guide has been split into a build section and a installation section. The sequences documented here have been tested on Ubuntu 12.04 LTS, using root permissions.</p>
 
-<p>This sequence was tested on Ubuntu 11.0, using root permissions</p>
+<h1>On the build host.</h1>
 
-<h2>Setup environment</h2>
+<h2>Step 1: Setup environment for build machine.</h2>
 
 <p>First setup GIT:</p>
 
@@ -82,7 +83,7 @@ hosts</p>
     service nfs-kernel-server restart
 </div>
 
-<h2>Building the kernel</h2>
+<h2>Step 2: Build the kernel</h2>
 
 <p>
 First download the 
@@ -119,7 +120,7 @@ menuconfig. Select any additional kernel modules to install as required.</p>
     make -j`nproc` headers_check<br>
 </div>
 
-<h2>Building libheca</h2>
+<h2>Step 3: Building libheca</h2>
 
 <p>While it is possible to interact with Hecatonchire Kernel directly via the
 exposed ioctl interface, we also provide a wrapper named libheca, exposing an
@@ -147,54 +148,11 @@ This can be done by cloning the source with git using this command:
     make
 </div>
 
-<h2>Building QEMU</h2>
-
-<p>We provide a modified QEMU which supports Hecatonchire commands at the hypervisor level, basically, it 
-    implements the commands using libheca. Thus, Hecatonchire's live-migration and remote-memory is already 
-    built-in.
-</p>
-
-<p>
-First of all, install pre-requisites:
-</p>
-
-<div class='command'>
-    apt-get install zlib1g-dev pkg-config libglib2.0-dev 
-</div>
-
-<p>
-Hecatonchire QEMU is available from the <a href="https://github.com/hecatonchire/qemu-heca">qemu-heca repository</a> from github.
-This can be done by cloning the source with git using this command:
-</p>
-
-<div class='command'>
-    git clone http://github.com/hecatonchire/qemu-heca.git
-</div>
-
-<p>Navigate to the qemu-heca folder</p>
-
-<p>Configure build environment using:</p>
-
-<div class='command'>
-    export LINUX_INCLUDE_PATH=$PWD/../linux-heca/include/<br>
-    export LIBHECA_INCLUDE_PATH=$PWD/../libheca/src<br>
-    ./configure \<br>
-    --extra-cflags="-I${LINUX_INCLUDE_PATH} -I${LIBHECA_INCLUDE_PATH}" \<br>
-    --extra-ldflags="-L${LINUX_INCLUDE_PATH} -L${LIBHECA_INCLUDE_PATH}" \<br>
-    --enable-heca
-</div>
-
-<p>Compile using:</p>
-
-<div class='command'>
-    make -j `nproc`<br>
-</div>
-
 <h1>Execution on the Target Host</h1>
 
 <p>This sequence was tested on Ubuntu 10.10, using root permissions</p>
 
-<h2>Setup environment</h2>
+<h2>Step 4: Setup environment on target host machine.</h2>
 
 <p>First setup GIT:</p>
 
@@ -238,7 +196,7 @@ KERNEL=="rdma_cm", NAME="infiniband/%k", MODE="0666"<br>
     cd /mount/builder<br>
 </div>
 
-<h2>Installing the kernel</h2>
+<h2>Step 5: Installing the kernel</h2>
 
 <p>To install the kernel, execute the following commands (in the kernel build
 directory):</p>
@@ -298,7 +256,7 @@ siw module</p>
 <p>You can check that everything has been loaded correctly by running dmesg and
 checking for any errors.</p>
 
-<h2>Installing libheca</h2>
+<h2>Step 6: Installing libheca</h2>
 
 <p>Navigate to the libheca folder and build and install by running:<p>
 
@@ -306,7 +264,7 @@ checking for any errors.</p>
     make install
 </div>
 
-<h2>libheca sanity test</h2>
+<h2>Step 7: Running a libheca sanity test</h2>
 
 <p>To run a simple sanity test, navigate to the tests directory under
 libheca.</p>
@@ -348,14 +306,6 @@ To run the test, on the server node, run: </p>
 <p>The server node needs to be initialized first, then the client. After that,
 the onscreen numbering should be followed to demonstrate the heca system in
 action.</p>
-
-<h2>Installing QEMU</h2>
-
-<p>Navigate to the qemu-heca folder and install by running:<p>
-
-<div class='command'>
-    make install
-</div>
 
             </div>
         </div>
