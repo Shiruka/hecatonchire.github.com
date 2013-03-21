@@ -1,73 +1,98 @@
 <!DOCTYPE html>
 <html lang='en'>
 <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <link rel="stylesheet" type="text/css" href="stylesheets/reset.css" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/main.css" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/button.css" />
-    <title>The Hecatonchire Project</title>
-    <script type="text/javascript" src="javascripts/google.js"></script>
+  <meta charset='utf-8' />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <link rel="stylesheet" type="text/css" href="stylesheets/reset.css" />
+  <link rel="stylesheet" type="text/css" href="stylesheets/main.css" />
+  <link rel="stylesheet" type="text/css" href="stylesheets/button.css" />
+  <title>The Hecatonchire Project</title>
+  <script type="text/javascript" src="javascripts/google.js"></script>
 </head>
+
 <body>
-    <div id="container">
-        <div id="header">
-            <div id="banner">
-                <img src="images/logo2.png" style="width:80px; float:left;"/>
-                <div> <h1>The Hecatonchire Project</h1>
-                      <h2>- scaling many to one</h2> </div>
-            </div>
-        </div>
-        <div id="menubar">
-            <div id="mainmenu">
-               <ul>
-                  <li><a href="index.html">Home</a></li>
-                  <li><a href="started.html">Getting Started</a></li>
-                  <li><a href="https://github.com/hecatonchire/hecatonchire.github.com/wiki">Docs</a></li>
-                  <li><a class="current" href="download.html">Downloads</a></li>
-                  <li><a href="releases.html">Releases</a></li>
-                  <li><a href="research.html">Research</a></li>
-                  <li><a href="about.html">About us</a></li>
-                  <li><a href="faq.html">FAQ</a></li>
-               </ul>
-               <br style="clear:left"/>
-            </div>
-        </div>
-        <div id="mainframe">
-            <div id="maincontent">
+<div id="container">
+<div id="header">
+<div id="banner">
+<img src="images/logo2.png" style="width:80px; float:left;"/>
+<div> <h1>The Hecatonchire Project</h1>
+<h2>- scaling many to one</h2> </div>
+</div>
+</div>
+<div id="menubar">
+<div id="mainmenu">
+<ul>
+<li><a href="index.html">About</a></li>
+<li><a href="download.html">Download</a></li>
+<li><a href="docs.html">Documentation</a></li>
+<li><a href="research.html">News</a></li>
+<li><a href="about.html">Contact</a></li>
+<li><a href="faq.html">FAQ</a></li>
+</ul>
+<br style="clear:left"/>
+</div>
+</div>
+<div id="mainframe">
+<div id="maincontent">
+<!-- start page content BELOW this line -->
 
-            <h1>Downloads</h1>
-            
-            <p>All of the code you will need to run the heca platform is available on github. We advise reading the <a href="started">getting started guide</a> before starting.</p>
-            <a href="https://github.com/hecatonchire/" id="view-on-github" class="button"><span>View code here</span></a>
-            <br style="clear:both">
-            <p style="margin-top:20px;"></p>
+<h1>Releases/Branches</h1>
 
-            <p>
-                To install the <b>heca kernel</b>, you will need to first download the <a href="https://github.com/hecatonchire/linux-heca">linux-heca repository</a> from github.
-                This can be done by cloning the source with git using this command:
-            </p>
-            <div class='command'>git clone http://github.com/hecatonchire/linux-heca.git</div>
+<table border="0" cellpadding="15">
 
-            <p>
-                The <b>libheca</b> module is available from the <a href="https://github.com/hecatonchire/libheca">libheca repository</a> from github.
-                This can be done by cloning the source with git using this command:
-            </p>
-            <div class='command'>git clone http://github.com/hecatonchire/libheca.git</div>
+<tr><td align="left" valign="top">
+<h2>Dev (unstable) Branch</h2>
+<p>
+<u>GitHub Source Code:</u>
+<a href="https://github.com/hecatonchire/linux-heca/tree/dev">linux-heca</a>;
+<a href="https://github.com/hecatonchire/libheca/tree/dev">libheca</a>;
+<a href="https://github.com/hecatonchire/qemu-heca/tree/dev">qemu-heca</a>;
+<a href="https://github.com/hecatonchire/heca-misc/tree/dev">heca-misc</a>.
+</p>
+</td></tr>
 
-            <p>
-                The <b>qemu-heca</b> code for doing live migration is available from the <a href="https://github.com/hecatonchire/qemu-heca">qemu-heca repository</a> from github.
-                This can be done by cloning the source with git using this command:
-            </p>
-            <div class='command'>git clone http://github.com/hecatonchire/qemu-heca.git</div>
+<tr><td align="left" valign="top">
+<h2>Master (stable) Branch</h2>
+<p>
+<u>GitHub Source Code:</u>
+<a href="https://github.com/hecatonchire/linux-heca/tree/master">linux-heca</a>;
+<a href="https://github.com/hecatonchire/libheca/tree/master">libheca</a>;
+<a href="https://github.com/hecatonchire/qemu-heca/tree/master">qemu-heca</a>;
+<a href="https://github.com/hecatonchire/heca-misc/tree/master">heca-misc</a>.
+</p>
+</td></tr>
 
+<tr><td align="left" valign="top">
+<h2>heca-v0.1.0 (06 February 2013)</h2>
+<p>
+<u>GitHub Source Code:</u> 
+<a href="https://github.com/hecatonchire/linux-heca/tree/heca-b0.1">linux-heca</a>;
+<a href="https://github.com/hecatonchire/libheca/tree/heca-b0.1">libheca</a>;
+<a href="https://github.com/hecatonchire/qemu-heca/tree/heca-b0.1">qemu-heca</a>;
+<a href="https://github.com/hecatonchire/heca-misc/tree/heca-b0.1">heca-misc</a>.
+<br>
+<u>Change Log:</u>
+<font size="1">
+<ul>
+<li>Remote page memory access at a setup per process</i>
+<li>Shared virtual address space with transparent coherency mechanisms</li>
+<li>Wide RDMA support: softIWARP; IWARP; InfiniBand</li>
+<li>Remote memory redundancy via memory provider mirroring</li>
+<li>Remote page simple pre-fetcher</li>
+<li>Native kernel API (via ioctls and sysfs)</li>
+<li>User mode binding via libheca library</li>
+<li>Qemu providing transparent (via Linux/KVM) memory aggregation</li>
+<li>Qemu providing post-copy live migration (via Linux/KVM)</li>
+</ul>
+</font>
+</p>
+</td></tr>
+</table>
 
-
-
-
-
-            </div>
-        </div>
-    </div>
+<!-- start page content ABOVE this line -->
+</div>
+</div>
+</div>
 </body>
 </html>
+
