@@ -1,41 +1,43 @@
 <!DOCTYPE html>
 <html lang='en'>
 <head>
-  <meta charset='utf-8' />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-  <link rel="stylesheet" type="text/css" href="stylesheets/reset.css" />
-  <link rel="stylesheet" type="text/css" href="stylesheets/main.css" />
-  <link rel="stylesheet" type="text/css" href="stylesheets/button.css" />
-  <title>The Hecatonchire Project</title>
-  <script type="text/javascript" src="javascripts/google.js"></script>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <link rel="stylesheet" type="text/css" href="stylesheets/reset.css" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/main.css" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/slides.css" />
+    <title>The Hecatonchire Project</title>
+    <script type="text/javascript" src="javascripts/jquery-latest.min.js"></script>
+    <script type="text/javascript" src="javascripts/slides.jquery.js"></script>
+    <script type="text/javascript" src="javascripts/google.js"></script>
+    <script type="text/javascript" src="javascripts/main.js"></script>
 </head>
-
 <body>
-<div id="container">
-<div id="header">
-<div id="banner">
-<img src="images/logo2.png" style="width:80px; float:left;"/>
-<div> <h1>The Hecatonchire Project</h1>
-<h2>- scaling many to one</h2> </div>
-</div>
-</div>
-<div id="menubar">
-<div id="mainmenu">
-<ul>
-<li><a href="index.html">About</a></li>
-<li><a href="download.html">Download</a></li>
-<li><a href="docs.html">Documentation</a></li>
-<li><a href="news.html">News</a></li>
-<li><a href="contact.html">Contact</a></li>
-<li><a href="faq.html">FAQ</a></li>
-</ul>
-<br style="clear:left"/>
-</div>
-</div>
-<div id="mainframe">
-<div id="maincontent">
-<!-- start page content BELOW this line -->
-
+    <div id="container">
+        <div id="header">
+            <div id="banner">
+                <img src="images/logo2.png" style="width:80px; float:left;"/>
+                <div> <h1>The Hecatonchire Project</h1>
+                      <h2>- scaling many to one</h2> </div>
+            </div>
+        </div>
+        <div id="menubar">
+            <div id="mainmenu">
+               <ul>
+                  <li><a class="current" href="index.html">Home</a></li>
+                  <li><a href="started.html">Getting Started</a></li>
+                  <li><a href="https://github.com/hecatonchire/hecatonchire.github.com/wiki">Docs</a></li>
+                  <li><a href="download.html">Downloads</a></li>
+                  <li><a href="releases.html">Releases</a></li>
+                  <li><a href="research.html">Research</a></li>
+                  <li><a href="about.html">About us</a></li>
+                  <li><a href="faq.html">FAQ</a></li>
+               </ul>
+               <br style="clear:left"/>
+            </div>
+        </div>
+        <div id="mainframe">
+        <div id="maincontent">
         <img src="images/aggregated_server.png" style="float:right; width: 380px; margin: 45px 0 0 0px;">
         <h1>The Vision</h1>
         <p style=''>
@@ -65,15 +67,14 @@
 
         <h1>How it works</h1>
         <img src="images/dsm.png" style="float:right; width: 370px; margin: 0 0 0 20px;">
-        <p>We have developed a linux kernel module that associates memory on a remote computer(s) to the local system via remote distributed memory access (RDMA). The Kernel module allow any process (or VM as we integrated the technology within KVM) to leverage remote memory as it was local. The results are impressive with a page fault resolution of <b>16 micro seconds</b> over 40 Gbps IB and 26 micro seconds over 10 GbE Iwarp. This is <b>200x</b> faster than swap to HDD and faster than the best Flash technology. Moreover, we deliver a single digit percentage overhead while using remote memory versus local DRAM. Visit our <a href="docs.html">documentation</a> page to download the kernel module and API to set up your own distributed memory system (DSM).<p>
+        <p>We have developed a linux kernel module that associates memory on a remote computer(s) to the local system via remote distributed memory access (RDMA). The Kernel module allow any process (or VM as we integrated the technology within KVM) to leverage remote memory as it was local. The results are impressive with a page fault resolution of <b>16 micro seconds</b> over 40 Gbps IB and 26 micro seconds over 10 GbE Iwarp. This is <b>200x</b> faster than swap to HDD and faster than the best Flash technology. Moreover, we deliver a single digit percentage overhead while using remote memory versus local DRAM. Visit our <a href="started.html">getting started</a> page to download the kernel module and API to set up your own distributed memory system (DSM).<p>
         <br style="clear:both">
         <h1>What's cooking?</h1>
         <p>To date, the focus has been on memory pooling and we have <a href="research.html">proven results</a> showcasing the advantages of DSM. Coming soon, we expect to extend the technology to support aggregated computing power and I/O onto a single node. <p>
         </div>
 
-<!-- start page content ABOVE this line -->
-</div>
-</div>
+
+        </div>
+    </div>
 </body>
 </html>
-
