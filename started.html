@@ -13,20 +13,18 @@
         <div id="header">
             <div id="banner">
                 <img src="images/logo2.png" style="width:80px; float:left;"/>
-                <div> <h1>The Hecatonchire Project</h1>
-                      <h2>- scaling many to one</h2> </div>
+                <div> <h2>The Hecatonchire Project</h2>
+                      <h3>- scaling many to one</h3> </div>
             </div>
         </div>
         <div id="menubar">
             <div id="mainmenu">
                <ul>
                   <li><a href="index.html">Home</a></li>
-                  <li><a class="current" href="started.html">Getting Started</a></li>
-                  <li><a href="https://github.com/hecatonchire/hecatonchire.github.com/wiki">Docs</a></li>
-                  <li><a href="download.html">Downloads</a></li>
+                  <li><a href="docs.html">Documentation</a></li>
+                  <li><a href="download.html">Download</a></li>
                   <li><a href="news.html">News</a></li>
                   <li><a href="contact.html">Contact</a></li>
-                  <li><a href="faq.html">FAQ</a></li>
                </ul>
                <br style="clear:left"/>
             </div>
@@ -34,12 +32,13 @@
         <div id="mainframe">
             <div id="maincontent">
 
-<h1>Getting started with linux-heca and libheca</h1>
+<h1>Getting Started</h1>
+
 <p>The following guide will show you how to build and install the heca kernel and userspace library for working with it. Since typically, you will want to build the kernel on a separate machine from the installation machine, this guide has been split into a build section and a installation section. The sequences documented here have been tested on Ubuntu 12.04 LTS, using root permissions.</p>
 
-<h1>On the build host.</h1>
+<h2>On the build host.</h2>
 
-<h2>Step 1: Setup environment for build machine.</h2>
+<h3>Step 1: Setup environment for build machine.</h3>
 
 <p>First setup GIT:</p>
 
@@ -82,7 +81,7 @@ hosts</p>
     service nfs-kernel-server restart
 </div>
 
-<h2>Step 2: Build the kernel</h2>
+<h3>Step 2: Build the kernel</h3>
 
 <p>
 First download the 
@@ -119,7 +118,7 @@ menuconfig. Select any additional kernel modules to install as required.</p>
     make -j`nproc` headers_check<br>
 </div>
 
-<h2>Step 3: Building libheca</h2>
+<h3>Step 3: Building libheca</h3>
 
 <p>While it is possible to interact with Hecatonchire Kernel directly via the
 exposed ioctl interface, we also provide a wrapper named libheca, exposing an
@@ -147,9 +146,9 @@ This can be done by cloning the source with git using this command:
     make
 </div>
 
-<h1>Execution on the Target Host</h1>
+<h2>Execution on the Target Host</h2>
 
-<h2>Step 4: Setup environment on target host machine.</h2>
+<h3>Step 4: Setup environment on target host machine.</h3>
 
 <p>First setup GIT:</p>
 
@@ -193,7 +192,7 @@ KERNEL=="rdma_cm", NAME="infiniband/%k", MODE="0666"<br>
     cd /mount/builder<br>
 </div>
 
-<h2>Step 5: Installing the kernel</h2>
+<h3>Step 5: Installing the kernel</h3>
 
 <p>To install the kernel, execute the following commands (in the kernel build
 directory):</p>
@@ -253,7 +252,7 @@ siw module</p>
 <p>You can check that everything has been loaded correctly by running dmesg and
 checking for any errors.</p>
 
-<h2>Step 6: Installing libheca</h2>
+<h3>Step 6: Installing libheca</h3>
 
 <p>Navigate to the libheca folder and build and install by running:<p>
 
@@ -261,7 +260,7 @@ checking for any errors.</p>
     make install
 </div>
 
-<h2>Step 7: Running a libheca sanity test</h2>
+<h3>Step 7: Running a libheca sanity test</h3>
 
 <p>To run a simple sanity test, navigate to the tests directory under
 libheca.</p>
