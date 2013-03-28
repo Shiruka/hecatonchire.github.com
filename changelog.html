@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <html lang='en'>
 <head>
     <meta charset='utf-8' />
@@ -22,7 +22,7 @@
             <div id="mainmenu">
                <ul>
                   <li><a href="index.html">Home</a></li>
-                  <li><a class="current" href="docs.html">Documentation</a></li>
+                  <li><a href="docs.html">Documentation</a></li>
                   <li><a href="download.html">Download</a></li>
                   <li><a href="news.html">News</a></li>
                   <li><a href="contact.html">Contact</a></li>
@@ -33,21 +33,28 @@
         <div id="mainframe">
             <div id="maincontent">
 
-<h1>Documentation</h1>
-            
-<p>We advise reading the <a href="started.html">Getting Started</a> guide to get
-Hecatonchire installed and running.</p>
+<h1>Changelog</h1>
 
-<p>The <a href="faq.html">FAQ</a> page will provide general information on the
-solution, supported hardware, technology and licensing</p>
+<h2>Hecatonchire <a name="0.1.0">0.1.0</a> (2012-02-06)</h2>
 
-<p>
-For more information on how to use hecatonchire, please use the <a href="https://github.com/hecatonchire/hecatonchire.github.com/wiki">Hecatonchire Wiki</a>
-</p>
+<p>This is the first official branch with all features to date included.</p>
+
+<p><small>
+<ul>
+<li>Remote page memory access at a setup per process</i>
+<li>Shared virtual address space with transparent coherency mechanisms</li>
+<li>RDMA support: softIWARP; IWARP; RoCE; InfiniBand</li>
+<li>Remote memory redundancy via memory provider mirroring</li>
+<li>Remote page simple pre-fetcher</li>
+<li>Native kernel API (via ioctls and sysfs)</li>
+<li>User mode binding via libheca library</li>
+<li>Qemu providing transparent (via Linux/KVM) memory aggregation</li>
+<li>Qemu providing post-copy live migration (via Linux/KVM)</li>
+</ul>
+</small></p>
 
             </div>
         </div>
     </div>
 </body>
 </html>
-
