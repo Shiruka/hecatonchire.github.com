@@ -25,7 +25,6 @@
                   <li><a href="started.html">Getting Started</a></li>
                   <li><a href="https://github.com/hecatonchire/hecatonchire.github.com/wiki">Docs</a></li>
                   <li><a href="download.html">Downloads</a></li>
-                  <li><a class="current" href="releases.html">Releases</a></li>
                   <li><a href="news.html">News</a></li>
                   <li><a href="about.html">About us</a></li>
                   <li><a href="faq.html">FAQ</a></li>
@@ -36,36 +35,25 @@
         <div id="mainframe">
             <div id="maincontent">
 
-            <h1>Heca Release Notes</h1>
-            <h2>Heca-v0.1.0 (06 February 2012)</h2>
-            <p>This is the first official branch with all features to date included.</p>
-            <h3><i>heca-linux features</i></h3>
-            <ul>
-            <li>Full Integration with Linux MM</li> 
-            <li>Shared Virtual Address Space</li>
-            <li>RDMA and zero-copy</li>
-            <li>Page pool</li>
-            <li>RRAIM (active-passive-passive)</li>
-            <li>Page prefetching</li>
-            <li>Coherent sharing</li>
-            </ul>
+<h1>Hecatonchire Changelog</h1>
 
-            <h3><i>libheca features</i></h3>
-            <ul>
-            <li>Simple API for master and client initialization</li>
-            </ul>
+<h2>Hecatonchire <a name="0.1.0">0.1.0</a> (2012-02-06)</h2>
 
-            <h3><i>qemu-heca features</i></h3>
-            <ul>
-            <li>Transparent memory aggregation</li>
-            <li>Live migration</li>
-            </ul>
-            
+<p>This is the first official branch with all features to date included.</p>
 
-
-
-
-
+<p><small>
+<ul>
+<li>Remote page memory access at a setup per process</i>
+<li>Shared virtual address space with transparent coherency mechanisms</li>
+<li>RDMA support: softIWARP; IWARP; RoCE; InfiniBand</li>
+<li>Remote memory redundancy via memory provider mirroring</li>
+<li>Remote page simple pre-fetcher</li>
+<li>Native kernel API (via ioctls and sysfs)</li>
+<li>User mode binding via libheca library</li>
+<li>Qemu providing transparent (via Linux/KVM) memory aggregation</li>
+<li>Qemu providing post-copy live migration (via Linux/KVM)</li>
+</ul>
+</small></p>
 
             </div>
         </div>
