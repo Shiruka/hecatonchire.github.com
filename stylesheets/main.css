@@ -1,5 +1,5 @@
 html, body {
-    font-family: Helvetica Neue, Arial, sans-serif;
+    font-family: Oxygen, helvetica, sans-serif;
     background-color: #CBC1C0;
     height: 100%;
 }
@@ -134,26 +134,46 @@ div.command {
     font-family:monospace;
 }
 
-#hor-zebra
-{
-	font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
-	font-size: 12px;
-	text-align: left;
-	border-collapse: collapse;
+.body {
+    color: black;
 }
-#hor-zebra th
-{
-	font-size: 14px;
-	font-weight: normal;
-	padding: 10px 8px;
-	color: #039;
+
+strong, b {
+    font-weight: bold;
 }
-#hor-zebra td
-{
-	padding: 8px;
-	color: #669;
+
+#releases {
+    clear: both;
+    margin: 0 auto;
+    border-collapse: separate;
+    border-spacing: 2px;
+    border-color: gray;
 }
-#hor-zebra .odd
-{
-	background: #e8edff; 
+
+#releases tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
 }
+
+#releases td, th {
+    padding: 0.1em;
+    display: table-cell;
+    vertical-align: inherit;
+}
+
+#releases tr:nth-child(odd) {
+    background-color: #efefef;
+}
+#releases tr:nth-child(even) {
+    background-color: white;
+}
+
+#releases tr:hover {
+    background-color: #e0e0e0;
+}
+
+#releases td a {
+    text-decoration: none;
+}
+
