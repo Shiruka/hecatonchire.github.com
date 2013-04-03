@@ -35,42 +35,87 @@
         </div>
         <div id="mainframe">
         <div id="maincontent">
-        <img src="images/aggregated_server.png" style="float:right; width: 380px; margin: 45px 0 0 0px;">
-        <h1>The Vision</h1>
-        <p style=''>
-        Cloud storage is by now a common concept allowing storage to be delivered as 
-        a service and for that reason, can be considered virtually limitless. 
-        Imagine being able to aggregate memory, 
-        cpu and I/O in exactly the same way. Imagine servers being able to request additional memory 
-        or computing power from other networked nodes on demand. The Hecatonchire 
-        project is an open source project that aims to deliver these types of aggregated resources 
-        for use on every day hardware.
-        </p>
 
-        <h1>Applications</h1>
-        <div id="frame"> 
-            <div id="slides">
-                <div class="slides_container"> 
-                    <div>
-                        <img src="images/livemigration.png">
-                    </div>
-                    <div>
-                        <img src="images/memorycloud.png" style="width:850px; height:270px">
-                    </div>
-                </div>
+<h1>The Hecatonchire Project</h1>
+
+<h2>Introduction</h2>
+
+<!--
+<img src="images/heca-home.jpg" style="float:right; width: 250px; margin: 45px 0 0 0px;">
+-->
+
+<p>
+<strong>Hecatonchire</strong> ("hundred handed one" in Greek Mythology) is a
+framework of tools providing memory, I/O and CPU resource aggregation
+capabilities to x86/Linux native application as well as to Linux/KVM VMs using
+commodity hardware and fast RDMA-based interconnects.
+</p>
+
+<p>
+Hecatonchire already provides some capabilities such as: post-copy live
+migration; VM-based memory pooling; while other capabilities such as
+application-transparent memory pooling; VM flash cloning; I/O pooling are in
+the pipeline.
+</p>
+
+<p>Hecatonchire is <a href="http://www.opensource.org/">Open Source</a>
+<a href="http://www.gnu.org/philosophy/free-sw.html">Free Software</a>,
+and is freely available under the 
+<a href="http://www.gnu.org/licenses/gpl-2.0.html">GNU General Public License, version 2</a>.</p>
+
+<br style="clear:both">
+
+<h2>Vision & Concepts</h2>
+
+<img src="images/aggregated_server.png" style="float:right; width: 380px; margin: 45px 0 0 0px;">
+
+<p>
+Cloud storage is by now a common concept allowing storage to be delivered as a
+service and for that reason, can be considered virtually limitless.  Imagine
+being able to aggregate memory, CPU and I/O in exactly the same way. Imagine
+servers being able to request additional memory or computing power from other
+networked nodes on demand. The Hecatonchire project is an open source project
+that aims to deliver these types of aggregated resources for use on every day
+hardware.
+</p>
+
+<br style="clear:both">
+
+<h2>Use Cases</h2>
+
+<div id="frame"> 
+<div id="slides">
+<div class="slides_container"> 
+<div>
+    <img src="images/livemigration.png">
+</div>
+<div>
+    <img src="images/memorycloud.png" style="width:850px; height:270px">
+</div>
+</div>
+</div>
+</div>
+
+<p></p>
+
+<br style="clear:both">
+
+<h2>Technology</h2>
+
+<img src="images/dsm.png" style="float:right; width: 370px; margin: 0 0 0 20px;">
+
+<p>We have developed a linux kernel module that associates memory on a remote
+computer(s) to the local system via remote distributed memory access (RDMA).
+The Kernel module allow any process (or VM as we integrated the technology
+within KVM) to leverage remote memory as it was local. The results are
+impressive with a page fault resolution of <b>16 micro seconds</b> over 40 Gbps
+IB and 26 micro seconds over 10 GbE Iwarp. This is <b>200x</b> faster than swap
+to HDD and faster than the best Flash technology. Moreover, we deliver a single
+digit percentage overhead while using remote memory versus local DRAM.<p>
+
+<br style="clear:both">
+
             </div>
-        </div>
-        <br style="clear:both">
-
-        <h1>How it works</h1>
-        <img src="images/dsm.png" style="float:right; width: 370px; margin: 0 0 0 20px;">
-        <p>We have developed a linux kernel module that associates memory on a remote computer(s) to the local system via remote distributed memory access (RDMA). The Kernel module allow any process (or VM as we integrated the technology within KVM) to leverage remote memory as it was local. The results are impressive with a page fault resolution of <b>16 micro seconds</b> over 40 Gbps IB and 26 micro seconds over 10 GbE Iwarp. This is <b>200x</b> faster than swap to HDD and faster than the best Flash technology. Moreover, we deliver a single digit percentage overhead while using remote memory versus local DRAM. Visit our <a href="started.html">getting started</a> page to download the kernel module and API to set up your own distributed memory system (DSM).<p>
-        <br style="clear:both">
-        <h1>What's cooking?</h1>
-        <p>To date, the focus has been on memory pooling and we have <a href="research.html">proven results</a> showcasing the advantages of DSM. Coming soon, we expect to extend the technology to support aggregated computing power and I/O onto a single node. <p>
-        </div>
-
-
         </div>
     </div>
 </body>
