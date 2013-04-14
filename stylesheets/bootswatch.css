@@ -169,12 +169,12 @@ body .one .bsa_it_p {
 @media (max-width: 480px) {
 
     .hero-unit {
-        padding: 20px 20px 0;
-        margin: 0 0 20px;
+        /*padding: 20px 20px 0;*/
+        /*margin: 0 0 20px;*/
     }
 
     .hero-unit h1 {
-        font-size: 36px;
+        /*font-size: 36px;*/
     }
 
     .hero-unit iframe {
@@ -219,8 +219,8 @@ body .one .bsa_it_p {
 @media (min-width: 481px) and (max-width: 767px) {
 
     .hero-unit {
-        margin-top: 0;
-        padding: 30px;
+        /*margin-top: 0;*/
+        /*padding: 30px;*/
     }
 
     .about {
