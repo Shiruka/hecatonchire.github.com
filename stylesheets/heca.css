@@ -17,11 +17,6 @@ body {
   overflow-y: scroll;
 }
 
-/* Code in headings 
-h3 code {
-  font-size: 14px;
-  font-weight: normal;
-}
 
 /* Tweak navbar brand link to be super sleek
 -------------------------------------------------- */
@@ -60,8 +55,6 @@ P .lead {
 h2,h3 {
   color: #13213b;
   letter-spacing: -1.5px;
-  /*text-shadow: 0px 2px 3px #555;*/
-  /*font-weight:bold;*/
 }
 
 div > img {
@@ -105,21 +98,10 @@ ul, ol {
   background-color: #eeeeee;
 }
 
-/*.table-striped {
-  background-color: #dddddd;
-}*/
-/*.table-striped tbody > tr:nth-child(odd) > td,
-.table-striped tbody > tr:nth-child(odd) > th {
-  background-color: #E1E4E6;
-}*/
-
 .navbar-inner {
   border: 1px solid rgb(182, 182, 182);
 }
 
-/*.navbar .container { 
-  white-space: nowrap;
-}*/
 .preview {
 padding-top: 0px;
 }
@@ -180,8 +162,8 @@ hr.soften {
 .hero-unit .header_logo {
   background-image:  url("/images/header_logo.png");
   background-position: center;
-  width: 865px;
-  height: 213px;
+  width: 750px;
+  height: 187px;
   margin-left:auto;
   margin-right:auto;
 }
