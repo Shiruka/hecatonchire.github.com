@@ -7,7 +7,9 @@ $(function(){
             
         //     });
 
-        $("#nav_docs").click(makeNavFunc('nav_docs', 'docs.html'));
+        $("#nav_docs_gs").click(makeNavFunc('nav_docs_gs', 'started.html'));
+        $("#nav_docs_faq").click(makeNavFunc('nav_docs_faq', 'faq.html'));
+        $("#nav_docs_wiki").click(makeNavFunc('nav_docs_wiki', 'https://github.com/hecatonchire/hecatonchire.github.com/wiki'));
         $("#nav_download").click(makeNavFunc('nav_download', 'download.html'));
         $("#nav_news").click(makeNavFunc('nav_news', 'news.html'));
         $("#nav_contant").click(makeNavFunc('nav_contant', 'contact.html'));

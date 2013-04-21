@@ -32,10 +32,23 @@
         <div class="nav-collapse">
             <ul class="nav" id="main-menu-bar">
               <li class="active"><a  href="/" id="nav_home">Home</a></li>
-              <li><a id="nav_docs">Documentation</a></li>
+              <li class="dropdown">
+                <a class="dropdown-toggle"
+                   data-toggle="dropdown"
+                   href="#">
+                    Documentation
+                    <b class="caret"></b>
+                  </a>
+                <ul class="dropdown-menu" id='nav_docs'>
+                    <li><a tabindex="-1" id="nav_docs_gs">Getting started</a></li>
+                    <li><a tabindex="-1" id="nav_docs_faq" >FAQ</a></li>
+                    <li><a tabindex="-1" id="nav_docs_wiki">Hecatonchire Wiki</a></li>
+                </ul>
+              </li>
               <li><a id="nav_download">Download</a></li>
               <li><a id="nav_news">News</a></li>
               <li><a id="nav_contant">Contact</a></li>
+
             </ul>
         </div>
       </div>
@@ -140,16 +153,11 @@
         </div>
       </div>
     </div>
-
-     <hr>
-
-      <footer id="footer">
-        <h6 class="pull-right"><a href="#top">Back to top</a></h6>
-        <h6 class="pull-left">
-          Created by Hecatonchire Project team members using <a href="http://twitter.github.io/bootstrap/">Bootstrap</a>
-        </h6>
-      </footer>
-
   </div>
+    <footer class="footer">
+      <hr>
+      Created by The Hecatonchire Project team members using 
+      <a href="http://twitter.github.io/bootstrap/">Bootstrap</a>
+    </footer>
   </body>
 </html>
