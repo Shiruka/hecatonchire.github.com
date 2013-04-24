@@ -23,7 +23,7 @@
 
 <div class="navbar navbar-static-top">
     <div class="navbar-inner">
-      <div class="container" style="width: 400px;">
+      <div class="container" style="width: 445px;">
         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
@@ -45,8 +45,8 @@
                     <li><a tabindex="-1" id="nav_docs_wiki">Hecatonchire Wiki</a></li>
                 </ul>
               </li>
-              <li><a id="nav_download">Download</a></li>
-              <li><a id="nav_news">News</a></li>
+              <li><a id="nav_download">Downloads</a></li>
+              <li><a id="nav_news">Publications</a></li>
               <li><a id="nav_contant">Contact</a></li>
 
             </ul>
@@ -73,9 +73,9 @@
 
         <p>
         Hecatonchire already provides some capabilities such as: post-copy live
-        migration; VM-based memory pooling; while other capabilities such as
-        application-transparent memory pooling; VM flash cloning; I/O pooling are in
-        the pipeline.
+        migration and VM-based memory pooling. While other capabilities such as
+        application-transparent memory pooling, VM flash cloning and I/O pooling are in
+        the development pipeline.
         </p>
 
         <p>Hecatonchire is <a href="http://www.opensource.org/">Open Source</a>
@@ -108,7 +108,7 @@
     </div>
 
     <div class="row">
-      <div class="span8">
+      <div class="span7">
       <h2>Vision & Concepts</h2>
         <p>
         Cloud storage is by now a common concept allowing storage to be delivered as a
@@ -119,43 +119,45 @@
         that aims to deliver these types of aggregated resources for use on every day
         hardware.
         </p>
+      <h2>Leveraging on fast Interconnects</h2>
+        <p>
+        The development in recent years of high-bandwidth, low-latency network
+        interconnects, such as Infiniband and 100GB Ethernet has enabled the 
+        opportunity to utilize resources of remote hosts. In particular, by
+        leveraging on RDMA (Remote Direct Memory Access), sharing memory within
+        a cluster  has become a viable scale-out option for memory intensive
+        applications.
+        </p>
       </div>
-      <div class="span4">
+      <div class="span5">
         <img src="images/aggregated_server.png">
       </div>
     </div>
 
     <div class="row">
-      <div class="span8">
-        <h2>Technology</h2>
-
-        <p>We have developed a Linux kernel module that associates memory on a remote
-        computer(s) to the local system via remote distributed memory access (RDMA).
-        The Kernel module allow any process (or VM as we integrated the technology
-        within KVM) to leverage remote memory as it was local. The results are
-        impressive with a page fault resolution of <b>16 micro seconds</b> over 40 Gbps
-        IB and 26 micro seconds over 10 GbE Iwarp. This is <b>200x</b> faster than swap
-        to HDD and faster than the best Flash technology. Moreover, we deliver a single
-        digit percentage overhead while using remote memory versus local DRAM.<p>
-      </div>
-      <div class="span4">
-        <img src="images/dsm.png">
-      </div>
-    </div>
-
-    
-    <div class="row">
       <div class="span12">
-        <h2>Use Cases</h2>
-        <div id="slides" align="center">
-          <img src="images/livemigration.png" style="width:600px;" />
-          <img src="images/memorycloud.png" style="width:600px;" />
-        </div>
+      <h2>Memory Mirroring</h2>
+        Hecatonchire enables the utilization of remote memory connected through
+        fast interconnects for storing pages. It also provides fault tolerance by
+        a mirroring schema while guaranteeing zero-downtime failover. 
+        Our code utilizes Remote Direct Memory Access in order to bypass the operating
+        system's overhead, this permits high-throughput and low-latency networking,
+        which is especially useful in massively parallel computer clusters. 
+        <br>
+        For more details of our implementation and performance measures - check out 
+        the <em>publications</em> page.
+      <br>
+      <img src="images/mm.png" style="width:550px;"/>
+
+      <h2>Hybrid Pre-copy/Post-copy Live VM migration</h2>
+      Hecatonchire enables instantaneous migration of KVM/QEMU VM by using pre-copy and post-copy migration techniques.
+      <br>
+      <img src="images/livemigration.png" style="width:600px;" />  
       </div>
     </div>
   </div>
     <footer class="footer">
-      <hr>
+      <hr align="center">
       Created by The Hecatonchire Project team members using 
       <a href="http://twitter.github.io/bootstrap/">Bootstrap</a>
     </footer>

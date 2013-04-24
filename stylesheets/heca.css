@@ -13,7 +13,9 @@
 body {
   position: relative;
   padding-top: 0px;
+  color: #13213b;
   background-color: #d4d9db;
+  background-image: url('../images/squairy_light.png');
   overflow-y: scroll;
 }
 
@@ -59,7 +61,10 @@ h2,h3 {
 
 div > img {
   max-width: 100%;
-  margin: 10px 0 10px 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  /*margin: 10px 0 10px 10px;*/
 }
 
 .side_news {
@@ -96,6 +101,10 @@ ul, ol {
 .table-hover tbody tr:hover > td,
 .table-hover tbody tr:hover > th {
   background-color: #eeeeee;
+}
+
+.table tr {
+  background-color: #e3e3e3;
 }
 
 .navbar-inner {
@@ -172,8 +181,8 @@ hr.soften {
   min-height: 20px;
   padding: 19px;
   margin-bottom: 20px;
-  background-color: #e5e5e5;
-  border: 1px solid #dcdcdc;
+  background-color: #dddddd;
+  border: 1px solid #bbbbbb;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
@@ -408,6 +417,7 @@ only screen and (     -o-min-device-pixel-ratio: 2/1) {
 .footer {
   text-align: center;
   padding: 20px 0;
+  color: #8596ab;
   /*margin-top: 70px;*/
   /*background-color: #f5f5f5;*/
 }
@@ -426,7 +436,11 @@ only screen and (     -o-min-device-pixel-ratio: 2/1) {
   padding-left: 0;
 }
 
-
+.footer hr {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 /* Special grid styles
 -------------------------------------------------- */
