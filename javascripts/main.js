@@ -13,6 +13,12 @@ $(function(){
         $("#nav_download").click(makeNavFunc('nav_download', 'download.html'));
         $("#nav_news").click(makeNavFunc('nav_news', 'news.html'));
         $("#nav_contant").click(makeNavFunc('nav_contant', 'contact.html'));
+
+        var content;
+        $.get('news.html', function(data){
+            content = data;
+            $("#news_ul").html($(content).find('li').slice(0,3));
+        });
     });
 
 function makeNavFunc(name, page) {
