@@ -31,7 +31,7 @@
         </a>
         <div class="nav-collapse">
             <ul class="nav" id="main-menu-bar">
-              <li class="active"><a  href="/" id="nav_home">Home</a></li>
+              <li><a  href="/" id="nav_home">Home</a></li>
               <li class="dropdown">
                 <a class="dropdown-toggle"
                    data-toggle="dropdown"
@@ -40,14 +40,14 @@
                     <b class="caret"></b>
                   </a>
                 <ul class="dropdown-menu" id='nav_docs'>
-                    <li><a tabindex="-1" id="nav_docs_gs">Getting started</a></li>
-                    <li><a tabindex="-1" id="nav_docs_faq" >FAQ</a></li>
-                    <li><a tabindex="-1" id="nav_docs_wiki">Hecatonchire Wiki</a></li>
+                    <li><a href="#started.html" tabindex="-1" id="nav_docs_gs">Getting started</a></li>
+                    <li><a href="#faq.html" tabindex="-1" id="nav_docs_faq" >FAQ</a></li>
+                    <li><a href="https://github.com/hecatonchire/hecatonchire.github.com/wiki" tabindex="-1" id="nav_docs_wiki">Hecatonchire Wiki</a></li>
                 </ul>
               </li>
-              <li><a id="nav_download">Downloads</a></li>
-              <li><a id="nav_news">News</a></li>
-              <li><a id="nav_contant">Contact</a></li>
+              <li><a href="#download.html" id="nav_download">Downloads</a></li>
+              <li><a href="#news.html" id="nav_news">News</a></li>
+              <li><a href="#contact.html" id="nav_contant">Contact</a></li>
             </ul>
         </div>
       </div>
@@ -60,92 +60,90 @@
 </div>
 
   <div class="container" id="main_content">
-    <div class="row">
-      <div class="span8">
-        <h2>Introduction</h2>
-        <p>
-        <strong>Hecatonchire</strong> ("Hundred-Handed One" in Greek Mythology) is a
-        framework of tools providing memory, I/O and CPU resource aggregation
-        capabilities to x86/Linux native application as well as to Linux/KVM VMs using
-        commodity hardware and fast RDMA-based interconnects.
-        </p>
+      <div class="row">
+        <div class="span8">
+          <h2>Introduction</h2>
+          <p>
+          <strong>Hecatonchire</strong> ("Hundred-Handed One" in Greek Mythology) is a
+          framework of tools providing memory, I/O and CPU resource aggregation
+          capabilities to x86/Linux native application as well as to Linux/KVM VMs using
+          commodity hardware and fast RDMA-based interconnects.
+          </p>
 
-        <p>
-        Hecatonchire already provides some capabilities such as: post-copy live
-        migration and VM-based memory pooling. While other capabilities such as
-        application-transparent memory pooling, VM flash cloning and I/O pooling are in
-        the development pipeline.
-        </p>
+          <p>
+          Hecatonchire already provides some capabilities such as: post-copy live
+          migration and VM-based memory pooling. While other capabilities such as
+          application-transparent memory pooling, VM flash cloning and I/O pooling are in
+          the development pipeline.
+          </p>
 
-        <p>Hecatonchire is <a href="http://www.opensource.org/">Open Source</a>
-        <a href="http://www.gnu.org/philosophy/free-sw.html">Free Software</a>,
-        and is freely available under the 
-        <a href="http://www.gnu.org/licenses/gpl-2.0.html">GNU General Public License, version 2</a>.</p>
-      </div>
-      <div class="span4">
-        <h4>Recent News</h3>
-        <div class="side_news">
-          <table id="news_table">
-            <ul id="news_ul">
-            </u>
-           </table>
+          <p>Hecatonchire is <a href="http://www.opensource.org/">Open Source</a>
+          <a href="http://www.gnu.org/philosophy/free-sw.html">Free Software</a>,
+          and is freely available under the 
+          <a href="http://www.gnu.org/licenses/gpl-2.0.html">GNU General Public License, version 2</a>.</p>
+        </div>
+        <div class="span4">
+          <h4>Recent News</h3>
+          <div class="side_news">
+            <table id="news_table">
+              <ul id="news_ul">
+              </u>
+             </table>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="row">
-      <div class="span7">
-      <h2>Vision & Concepts</h2>
-        <p>
-        Cloud storage is by now a common concept allowing storage to be delivered as a
-        service and for that reason, can be considered virtually limitless.  Imagine
-        being able to aggregate memory, CPU and I/O in exactly the same way. Imagine
-        servers being able to request additional memory or computing power from other
-        networked nodes on demand. The Hecatonchire project is an open source project
-        that aims to deliver these types of aggregated resources for use on every day
-        hardware.
-        </p>
-      <h2>Leveraging on fast Interconnects</h2>
-        <p>
-        The development in recent years of high-bandwidth, low-latency network
-        interconnects, such as Infiniband and 100GB Ethernet has enabled the 
-        opportunity to utilize resources of remote hosts. In particular, by
-        leveraging on RDMA (Remote Direct Memory Access), sharing memory within
-        a cluster  has become a viable scale-out option for memory intensive
-        applications.
-        </p>
+      <div class="row">
+        <div class="span7">
+        <h2>Vision & Concepts</h2>
+          <p>
+          Cloud storage is by now a common concept allowing storage to be delivered as a
+          service and for that reason, can be considered virtually limitless.  Imagine
+          being able to aggregate memory, CPU and I/O in exactly the same way. Imagine
+          servers being able to request additional memory or computing power from other
+          networked nodes on demand. The Hecatonchire project is an open source project
+          that aims to deliver these types of aggregated resources for use on every day
+          hardware.
+          </p>
+        <h2>Leveraging on fast Interconnects</h2>
+          <p>
+          The development in recent years of high-bandwidth, low-latency network
+          interconnects, such as Infiniband and 100GB Ethernet has enabled the 
+          opportunity to utilize resources of remote hosts. In particular, by
+          leveraging on RDMA (Remote Direct Memory Access), sharing memory within
+          a cluster  has become a viable scale-out option for memory intensive
+          applications.
+          </p>
+        </div>
+        <div class="span5">
+          <img src="images/aggregated_server.png">
+        </div>
       </div>
-      <div class="span5">
-        <img src="images/aggregated_server.png">
-      </div>
-    </div>
 
-    <div class="row">
-      <div class="span12">
-      <h2>Memory Mirroring</h2>
-        Hecatonchire enables the utilization of remote memory connected through
-        fast interconnects for storing pages. It also provides fault tolerance by
-        a mirroring schema while guaranteeing zero-downtime failover. 
-        Our code utilizes Remote Direct Memory Access in order to bypass the operating
-        system's overhead, this permits high-throughput and low-latency networking,
-        which is especially useful in massively parallel computer clusters. 
+      <div class="row">
+        <div class="span12">
+        <h2>Memory Mirroring</h2>
+          Hecatonchire enables the utilization of remote memory connected through
+          fast interconnects for storing pages. It also provides fault tolerance by
+          a mirroring schema while guaranteeing zero-downtime failover. 
+          Our code utilizes Remote Direct Memory Access in order to bypass the operating
+          system's overhead, this permits high-throughput and low-latency networking,
+          which is especially useful in massively parallel computer clusters. 
+          For more details of our implementation and performance measures - check out 
+          our <em>Publications</em>.
         <br>
-        For more details of our implementation and performance measures - check out 
-        our <em>Publications</em>.
-      <br>
-      <img src="images/mm.png" style="width:550px;"/>
+        <img src="images/mm.png" style="width:550px;"/>
 
-      <h2>Hybrid Pre-copy/Post-copy Live VM migration</h2>
-      Live migration is typically used for dynamic resource load balancing in
-      cloud environments. Thus, faster migration leads to less service disruption.
-      <br>
-      Hecatonchire features Pre-Copy and Post-Copy optimizations of KVM/QEMU 
-      Virtual Machines live migration mechanism which enables instantaneous migration of
-      VMs running memory intensive applications.
-      <br><br>
-      <img src="images/livemigration.png" style="width:600px;" />  
+        <h2>Hybrid Pre-copy/Post-copy Live VM migration</h2>
+        Live migration is typically used for dynamic resource load balancing in
+        cloud environments. Thus, faster migration leads to less service disruption.
+        Hecatonchire features Pre-Copy and Post-Copy optimizations of KVM/QEMU 
+        Virtual Machines live migration mechanism which enables instantaneous migration of
+        VMs running memory intensive applications.
+        <br><br>
+        <img src="images/livemigration.png" style="width:600px;" />  
+        </div>
       </div>
-    </div>
   </div>
     <footer class="footer">
       <hr align="center">
