@@ -1,12 +1,4 @@
 $(function(){
-        // $("#slides").slidesjs({
-        //     width: 300,
-        //     height: 200,
-        //     navigation: false,
-        //     pagination: false,
-            
-        //     });
-
         $("#nav_docs_gs").click(makeNavFunc('nav_docs_gs', 'started.html'));
         $("#nav_docs_faq").click(makeNavFunc('nav_docs_faq', 'faq.html'));
         $("#nav_docs_wiki").click(function(){  window.location = 'https://github.com/hecatonchire/hecatonchire.github.com/wiki'});
