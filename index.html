@@ -31,7 +31,7 @@
         </a>
         <div class="nav-collapse">
             <ul class="nav" id="main-menu-bar">
-              <li><a  href="/" id="nav_home">Home</a></li>
+              <li><a  href="/#" id="nav_home">Home</a></li>
               <li class="dropdown">
                 <a class="dropdown-toggle"
                    data-toggle="dropdown"
@@ -79,7 +79,7 @@
 
           <p>Hecatonchire is <a href="http://www.opensource.org/">Open Source</a>
           <a href="http://www.gnu.org/philosophy/free-sw.html">Free Software</a>,
-          and is freely available under the 
+          and is freely available under the
           <a href="http://www.gnu.org/licenses/gpl-2.0.html">GNU General Public License, version 2</a>.</p>
         </div>
         <div class="span4">
@@ -108,7 +108,7 @@
         <h2>Leveraging on fast Interconnects</h2>
           <p>
           The development in recent years of high-bandwidth, low-latency network
-          interconnects, such as Infiniband and 100GB Ethernet has enabled the 
+          interconnects, such as Infiniband and 100GB Ethernet has enabled the
           opportunity to utilize resources of remote hosts. In particular, by
           leveraging on RDMA (Remote Direct Memory Access), sharing memory within
           a cluster  has become a viable scale-out option for memory intensive
@@ -125,11 +125,11 @@
         <h2>Memory Mirroring</h2>
           Hecatonchire enables the utilization of remote memory connected through
           fast interconnects for storing pages. It also provides fault tolerance by
-          a mirroring schema while guaranteeing zero-downtime failover. 
+          a mirroring schema while guaranteeing zero-downtime failover.
           Our code utilizes Remote Direct Memory Access in order to bypass the operating
           system's overhead, this permits high-throughput and low-latency networking,
-          which is especially useful in massively parallel computer clusters. 
-          For more details of our implementation and performance measures - check out 
+          which is especially useful in massively parallel computer clusters.
+          For more details of our implementation and performance measures - check out
           our <em>Publications</em>.
         <br>
         <img src="images/mm.png" style="width:550px;"/>
@@ -137,17 +137,17 @@
         <h2>Hybrid Pre-copy/Post-copy Live VM migration</h2>
         Live migration is typically used for dynamic resource load balancing in
         cloud environments. Thus, faster migration leads to less service disruption.
-        Hecatonchire features Pre-Copy and Post-Copy optimizations of KVM/QEMU 
+        Hecatonchire features Pre-Copy and Post-Copy optimizations of KVM/QEMU
         Virtual Machines live migration mechanism which enables instantaneous migration of
         VMs running memory intensive applications.
         <br><br>
-        <img src="images/livemigration.png" style="width:600px;" />  
+        <img src="images/livemigration.png" style="width:600px;" />
         </div>
       </div>
   </div>
     <footer class="footer">
       <hr align="center">
-      Created by The Hecatonchire Project team members using 
+      Created by The Hecatonchire Project team members using
       <a href="http://twitter.github.io/bootstrap/">Bootstrap</a>
     </footer>
   </body>
