@@ -1,68 +1,31 @@
-<!DOCTYPE html>
-<html lang='en'>
-<head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <link rel="stylesheet" type="text/css" href="stylesheets/reset.css" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/main.css" />
-    <title>The Hecatonchire Project</title>
-    <script type="text/javascript" src="javascripts/google.js"></script>
-</head>
-<body>
-    <div id="container">
-        <div id="header">
-            <div id="banner">
-                <img src="images/logo2.png" style="width:80px; float:left;"/>
-                <div> <h1>The Hecatonchire Project</h1>
-                      <h2>- scaling many to one</h2> </div>
-            </div>
-        </div>
-        <div id="menubar">
-            <div id="mainmenu">
-               <ul>
-                  <li><a href="index.html">Home</a></li>
-                  <li><a href="docs.html">Documentation</a></li>
-                  <li><a href="download.html">Download</a></li>
-                  <li><a href="news.html">News</a></li>
-                  <li><a href="contact.html">Contact</a></li>
-               </ul>
-               <br style="clear:left"/>
-            </div>
-        </div>
-        <div id="mainframe">
-            <div id="maincontent">
-
-            <h1>Frequently Asked Questions</h1>
-			<p><b>What can I do with the Hecatonchire project?</b></p>
-            <p>You can extend the memory accessible to your applications by utilizing the memory of physical servers on the network. In a similar way, You can extend the memory of Virtual Machines to create your own memory cloud for running unmodified high memory applications. You can use Hecatonchire technology to instantaneously live migrate virtual machine from one physical host to another regardless of the amount of memory the VM uses ( using post-copy migration )</p> 
-            <br>
-            <p><b>What license is the Hecatonchire project under?</b></p>
-            <p>Kernel and Qemu-KVM: GPL License</p>
-			<p>LibeHeca: <a href="http://www.apache.org/licenses/LICENSE-2.0.html">Apache License</a></p>
-            <br>
-            <p><b>What languages do you support?</b></p>
-            <p>The libheca API is written in C so supports C/C++. However, if you use VMs to create a scale-out memory cloud, any software can avail of the additional memory.</p>
-            <br>
-			<p><b>Do I need special Hardware?</b></p>
-            <p>No, you do not need any special hardware, the Hecatonchire project has been designed 
-            to run on off-the-shelf hardware. You do not need a special NIC to use the RDMA 
-            functionality. This is because we have included 
-            <a href="http://www.gitorious.org/softiwarp">Softiwarp</a> functionality by default in 
-            our modified kernel. You can also use 
-            <a href="http://www.systemfabricworks.com/downloads/roce">SoftRoce</a> if you prefer. 
-            (See <a href="http://voidreflections.blogspot.de/2011/03/how-to-install-soft-iwarp-on-ubuntu.html">Installing SoftIwarp</a> 
-             and <a href="http://voidreflections.blogspot.de/2011/08/soft-roce-alternative-to-soft-iwarp.html">Installing SoftRoCE</a> for details on how to use these.) That said, if you want to to truely benefit from hardware acceleration from RDMA enabled NICs, we support all RDMA fabrics that are OFED compatible (our testing has been against IB with Mellanox X2 and IWARP Chelsio T4 NIC).</p>
-</p>        <br>
-            <p><b>Is it possible to use libheca without installing the heca kernel?</b></p>
-            <p>No, you will need to install the heca kernel.</p>
-            <br>
-            <p><b>How can I contribute to the hecatonchire project?</b></p>
-            <p>Become a member of the team on github. All contributions are welcome.</p>
-            <br>
-            
-
-            </div>
-        </div>
-    </div>
-</body>
-</html>
+<div class="row">
+  <div class="span12">
+    <h2>Frequently Asked Questions</h2>
+    <p><b>What can I do with the Hecatonchire project?</b></p>
+    <p>You can extend the memory accessible to your applications by utilizing the memory of physical servers on the network. In a similar way, You can extend the memory of Virtual Machines to create your own memory cloud for running unmodified high memory applications. You can use Hecatonchire technology to instantaneously live migrate virtual machine from one physical host to another regardless of the amount of memory the VM uses ( using post-copy migration )</p> 
+    <br>
+    <p><b>What license is the Hecatonchire project under?</b></p>
+    <p>Kernel and Qemu-KVM: GPL License</p>
+    <p>LibeHeca: <a href="http://www.apache.org/licenses/LICENSE-2.0.html">Apache License</a></p>
+    <br>
+    <p><b>What languages do you support?</b></p>
+    <p>The libheca API is written in C so supports C/C++. However, if you use VMs to create a scale-out memory cloud, any software can avail of the additional memory.</p>
+    <br>
+    <p><b>Do I need special Hardware?</b></p>
+    <p>No, you do not need any special hardware, the Hecatonchire project has been designed 
+    to run on off-the-shelf hardware. You do not need a special NIC to use the RDMA 
+    functionality. This is because we have included 
+    <a href="http://www.gitorious.org/softiwarp">Softiwarp</a> functionality by default in 
+    our modified kernel. You can also use 
+    <a href="http://www.systemfabricworks.com/downloads/roce">SoftRoce</a> if you prefer. 
+    (See <a href="http://voidreflections.blogspot.de/2011/03/how-to-install-soft-iwarp-on-ubuntu.html">Installing SoftIwarp</a> 
+     and <a href="http://voidreflections.blogspot.de/2011/08/soft-roce-alternative-to-soft-iwarp.html">Installing SoftRoCE</a> for details on how to use these.) That said, if you want to to truely benefit from hardware acceleration from RDMA enabled NICs, we support all RDMA fabrics that are OFED compatible (our testing has been against IB with Mellanox X2 and IWARP Chelsio T4 NIC).</p>
+    <br>
+    <p><b>Is it possible to use libheca without installing the heca kernel?</b></p>
+    <p>No, you will need to install the heca kernel.</p>
+    <br>
+    <p><b>How can I contribute to the hecatonchire project?</b></p>
+    <p>Become a member of the team on github. All contributions are welcome.</p>
+    <br>
+  </div>
+</div>
