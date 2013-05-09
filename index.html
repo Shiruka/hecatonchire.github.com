@@ -66,16 +66,16 @@
           <h2>Introduction</h2>
           <p>
           <strong>Hecatonchire</strong> ("Hundred-Handed One" in Greek Mythology) is a
-          framework of tools providing memory, I/O and CPU resource aggregation
+          framework of tools aiming to provide memory, I/O and CPU resource aggregation
           capabilities to x86/Linux native application as well as to Linux/KVM VMs using
-          commodity hardware and fast RDMA-based interconnects.
+          commodity hardware and fast RDMA-enabled interconnects.
           </p>
 
           <p>
-          Hecatonchire already provides some capabilities such as: post-copy live
-          migration and VM-based memory pooling. While other capabilities such as
-          application-transparent memory pooling, VM flash cloning and I/O pooling are in
-          the development pipeline.
+          In its current state, Hecatonchire focus on memory related capabilities such as:
+          post-copy live migration and VM-based memory pooling. While other capabilities
+          such as application-transparent memory pooling, VM flash cloning and I/O pooling
+          are in the development pipeline.
           </p>
 
           <p>Hecatonchire is <a href="http://www.opensource.org/">Open Source</a>
@@ -109,14 +109,11 @@
 
         <h2>Memory Cloud</h2>
           <p>
-            The Hecatonchire project intends to innovate the cloud infrastructure, by
-            enabling disaggregation of data center resources (CPU, Memory, I/O).
-            Such an effort can be based on a new virtualization paradigm: partitioning
-            resources of several hosts, then selectively  re-aggregating some of them
-            into a dynamic virtual infrastructure.
-            In context of Memory resources, participating hosts may choose
-            to contribute some of their memory to the system, while otherwise
-            continuing to operate normally, allowing the creation of a Memory Cloud service. 
+          The Hecatonchire solution eliminates memory segmentation by creating a pool of shared memory for the entire
+          cluster. Hecatonchire combines memory from dedicated appliances with memory from existing servers to create a
+          large memory cache which can be transparently shared among any or all servers or data center in a cluster.
+          It provides a shared network memory resource large enough to accommodate huge data sets, signiﬁcantly
+          reducing storage access and improving processing performance by orders of magnitude.
           </p>
         </div>
         <div class="span5">
