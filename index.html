@@ -106,14 +106,17 @@
           that aims to deliver these types of aggregated resources for use on every day
           hardware.
           </p>
-        <h2>Leveraging on fast Interconnects</h2>
+
+        <h2>Memory Cloud</h2>
           <p>
-          The development in recent years of high-bandwidth, low-latency network
-          interconnects, such as Infiniband and 100GB Ethernet has enabled the
-          opportunity to utilize resources of remote hosts. In particular, by
-          leveraging on RDMA (Remote Direct Memory Access), sharing memory within
-          a cluster  has become a viable scale-out option for memory intensive
-          applications.
+            The Hecatonchire project intends to innovate the cloud infrastructure, by
+            enabling disaggregation of data center resources (CPU, Memory, I/O).
+            Such an effort can be based on a new virtualization paradigm: partitioning
+            resources of several hosts, then selectively  re-aggregating some of them
+            into a dynamic virtual infrastructure.
+            In context of Memory resources, participating hosts may choose
+            to contribute some of their memory to the system, while otherwise
+            continuing to operate normally, allowing the creation of a Memory Cloud service. 
           </p>
         </div>
         <div class="span5">
@@ -121,9 +124,26 @@
         </div>
       </div>
 
+      <h2>Features</h2>
       <div class="row">
         <div class="span12">
-        <h2>Memory Mirroring</h2>
+          <h3>Leveraging on fast Interconnects</h3>
+          The development in recent years of high-bandwidth, low-latency network
+          interconnects, such as Infiniband and 100GB Ethernet has enabled the
+          opportunity to utilize resources of remote hosts. In particular, by
+          leveraging on RDMA (Remote Direct Memory Access), sharing memory within
+          a cluster  has become a viable scale-out option for memory intensive
+          applications.
+
+          <h3>Application and VM memory extension</h3>
+          Hecatonchire's memory extension features brings to realization the
+          ability to break the boundary of the physical memory available in a
+          single machine for a single Virtual Machine. KVM/QEMU was extended to
+          support deployment of VMs with memory aggregated from all participating
+          hosts of a cluster. This brings forward the ability to run Memory
+          intensive application on VMs with negligible performance drop.
+
+        <h3>Memory Mirroring</h3>
           Hecatonchire enables the utilization of remote memory connected through
           fast interconnects for storing pages. It also provides fault tolerance by
           a mirroring schema while guaranteeing zero-downtime failover.
@@ -135,7 +155,7 @@
         <br>
         <img src="images/mm.png" style="width:550px;"/>
 
-        <h2>Hybrid Pre-copy/Post-copy Live VM migration</h2>
+        <h3>Post-copy Live VM migration</h3>
         Live migration is typically used for dynamic resource load balancing in
         cloud environments. Thus, faster migration leads to less service disruption.
         Hecatonchire features Pre-Copy and Post-Copy optimizations of KVM/QEMU
